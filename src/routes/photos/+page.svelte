@@ -3,4 +3,4 @@
 	import { NavItemEnum } from '$lib/types/NavItem';
 </script>
 
-<Navbar selectedIndex={NavItemEnum.HOME} />
+<Navbar selectedIndex={NavItemEnum.PHOTOS} />
