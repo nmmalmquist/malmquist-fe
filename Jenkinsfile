@@ -1,9 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            podTemplate(yaml: readTrusted('pod.yaml')) {
-                namespace('jenkins-ns')
-            }
+            yamlFile 'docker_pod.yaml'
         }
     }
     stages {
