@@ -7,10 +7,12 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                sh 'ls'
-                sh 'pwd'
-                sh 'docker --version'
-                sh 'echo "Nick"'
+                container('docker'){
+                    sh 'ls'
+                    sh 'pwd'
+                    sh 'docker --version'
+                    sh 'echo "Nick"'
+                }
             }
         }
     }
