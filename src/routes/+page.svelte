@@ -4,4 +4,4 @@
 </script>
 
 <Navbar selectedIndex={NavItemEnum.HOME} />
-<div>Nicksssss website!!</div>
+<div>Nicksssss website!</div>
