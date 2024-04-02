@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                ls
-                docker --version
+                sh 'ls'
+                sh 'pwd'
+                sh 'docker --version'
                 sh 'echo "Nick"'
             }
         }
