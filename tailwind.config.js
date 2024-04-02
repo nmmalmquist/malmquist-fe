@@ -7,7 +7,7 @@ export default {
 		colors: {
 			transparent: 'transparent',
 			current: 'currentColor',
-			primary: 'orange',
+			primary: 'blue',
 			dirtywhite: '#fbf7f5',
 			white: '#ffffff',
 			lightgray: '#dadada'
