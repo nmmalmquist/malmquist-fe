@@ -2,8 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
-
 image:
   repository: nmmalmquist/malmquist-fe
   pullPolicy: Always
@@ -25,6 +23,8 @@ readinessProbe:
     path: /
     port: 3000
 
+#use replica count if autoscaling is disabled
+replicaCount: 1
 autoscaling:
   enabled: false
   minReplicas: 1

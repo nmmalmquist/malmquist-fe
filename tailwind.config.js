@@ -8,13 +8,12 @@ export default {
 			transparent: 'transparent',
 			current: 'currentColor',
 			primary: 'green',
-			dirtywhite: '#fbf7f5',
 			white: '#ffffff',
-			lightgray: '#dadada'
+			gray: "#999D9E"
 		},
 		extend: {
 			fontFamily: {
-				special: ['"Rajdhani"', ...defaultTheme.fontFamily.sans]
+				raleway: ['"Raleway"', ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},

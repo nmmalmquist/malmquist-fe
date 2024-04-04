@@ -1,7 +1,6 @@
 <script>
-	import Navbar from '$lib/components/Navbar.svelte';
-	import { NavItemEnum } from '$lib/types/NavItem';
+	import Navbar from "$lib/components/Navbar.svelte";
+
 </script>
 
-<Navbar selectedIndex={NavItemEnum.HOME} />
-<div>Nicksssss website!!</div>
+<Navbar />
