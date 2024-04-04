@@ -9,7 +9,8 @@ export default {
 			current: 'currentColor',
 			primary: 'green',
 			white: '#ffffff',
-			gray: "#999D9E"
+			dark: '#1C1D20',
+			gray: '#999D9E'
 		},
 		extend: {
 			fontFamily: {
