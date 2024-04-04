@@ -11,8 +11,7 @@ pipeline {
         SSH_REMOTE = 'nmalmquist@99.45.53.198'
         SSH_PORT = '1234'
     }
-    withCredentials([sshUserPrivateKey(credentialsId: "yourkeyid", keyFileVariable: 'keyfile')]) {
-        stages {
+    stages {
         // stage('Build Docker Image') {
         //     steps {
         //         container('docker'){
@@ -24,9 +23,11 @@ pipeline {
         //         }
         //     }
         // }
-            stage('Rollout Restart Kubernetes With New Image') {
+        stage('Rollout Restart Kubernetes With New Image') {
+            withCredentials([sshUserPrivateKey(credentialsId: "yourkeyid", keyFileVariable: 'keyfile')]) {
                 sh "ssh -i ${keyfile} ${env.SSH_REMOTE} -p ${env.SSH_PORT} 'kubectl rollout restart deployment/malmquist-fe-chart-helm-chart-malmquist-fe'"
             }
         }
+        
     }
 }
