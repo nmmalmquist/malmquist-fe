@@ -26,7 +26,7 @@ pipeline {
         stage('Rollout Restart Kubernetes With New Image') {
             steps {
                 script {
-                    withCredentials([sshUserPrivateKey(credentialsId: "yourkeyid", keyFileVariable: 'keyfile')]) {
+                    withCredentials([sshUserPrivateKey(credentialsId: "ssh-key-for-raspberry-pi", keyFileVariable: 'keyfile')]) {
                         sh "ssh -i ${keyfile} ${env.SSH_REMOTE} -p ${env.SSH_PORT} 'kubectl rollout restart deployment/malmquist-fe-chart-helm-chart-malmquist-fe'"
                     }
                 }
