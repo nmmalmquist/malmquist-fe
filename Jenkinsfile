@@ -23,10 +23,11 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Rollout Restart Kubernetes With New Image'){
-            steps {
-                sh "ssh ${env.SSH_REMOTE} -p ${env.SSH_PORT} 'kubectl rollout restart deployment/malmquist-fe-chart-helm-chart-malmquist-fe'"
+        withCredentials([sshUserPrivateKey(credentialsId: "yourkeyid", keyFileVariable: 'keyfile')]) {
+            stage('Rollout Restart Kubernetes With New Image') {
+                sh "ssh -i ${keyfile} ${env.SSH_REMOTE} -p ${env.SSH_PORT} 'kubectl rollout restart deployment/malmquist-fe-chart-helm-chart-malmquist-fe'"
             }
         }
+        
     }
 }
