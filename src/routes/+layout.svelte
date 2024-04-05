@@ -7,4 +7,6 @@
 	});
 </script>
 
-<slot />
+<div class="font-raleway">
+	<slot />
+</div>
