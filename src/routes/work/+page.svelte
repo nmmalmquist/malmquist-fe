@@ -3,4 +3,4 @@
 	import { NavItemEnum } from '$lib/types/NavItem';
 </script>
 
-<Navbar activeLink={NavItemEnum.PHOTOS} />
+<Navbar activeLink={NavItemEnum.WORK} />
