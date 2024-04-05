@@ -21,7 +21,6 @@
 			url: '/contact'
 		}
 	];
-	console.log(activeLink);
 </script>
 
 <nav class="flex flex-row justify-between w-full absolute p-8 text-white font-semibold">
