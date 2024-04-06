@@ -28,7 +28,7 @@ pipeline {
                 script {
                     withCredentials([sshUserPrivateKey(credentialsId: "ssh-key-for-raspberry-pi", keyFileVariable: 'keyfile')]) {
                         // StrictHostKeyChecking not make sure no prompting for fingerprint
-                        sh "ssh -o \"StrictHostKeyChecking no\" -v -i ${keyfile} ${env.SSH_REMOTE} -p ${env.SSH_PORT} 'kubectl rollout restart deployment/malmquist-fe-chart-helm-chart-malmquist-fe'"
+                        sh "ssh -o \"StrictHostKeyChecking no\" -v -i ${keyfile} ${env.SSH_REMOTE} -p ${env.SSH_PORT} 'kubectl rollout restart deployment/malmquist-fe-release-helm-chart-malmquist-fe'"
                     }
                 }
             }
