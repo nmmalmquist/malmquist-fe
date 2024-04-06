@@ -25,11 +25,16 @@
 
 <nav class="flex flex-row justify-between w-full absolute p-8 text-white font-semibold">
 	<div class="p-4">
-		<a href="/"
-			><span class="pr-1">©</span><span
-				><span class="hidden sm:inline">Code by</span> Nick Malmquist</span
-			></a
-		>
+		<a href="/" class="group">
+			<div class="flex ">
+				<div class="block credit transition-transform ease-in-out group-hover:rotate-[360deg] duration-500">
+					<span>©</span>
+				</div>
+				<div class="overflow-hidden w-[6.5rem] group-hover:w-60 duration-500">
+					<div class="pl-1 transition-transform duration-500 ease-in-out group-hover:translate-x-[-4.2rem]  whitespace-nowrap"><span>Code by</span> Nick Malmquist | Rock and Roll</div>
+				</div>
+			</div>
+		</a>
 	</div>
 	<div class="relative p-4 bullet sm:hidden flex justify-center">
 		<button>Menu</button>
@@ -47,6 +52,7 @@
 	.bullet::before {
 		content: '';
 		transform: translate(0, 50%);
+		position: absolute;
 		left: 0;
 		bottom: 50%;
 		width: 0.5rem;
