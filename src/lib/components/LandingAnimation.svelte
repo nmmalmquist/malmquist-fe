@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { hydrated } from '$lib/hydrated';
 	import { NavItemEnum } from '$lib/types/NavItem';
+	import { hydrated } from '$lib/utils/hydrated';
 	import { twMerge } from 'tailwind-merge';
 
 	export let displayText: NavItemEnum = NavItemEnum.HOME;

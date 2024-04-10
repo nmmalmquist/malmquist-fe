@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { hydrated } from '$lib/hydrated.js';
+	import { hydrated } from '$lib/utils/hydrated.js';
 	import { onMount } from 'svelte';
 	import '../app.css';
 

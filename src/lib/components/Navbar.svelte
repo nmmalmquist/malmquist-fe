@@ -1,4 +1,5 @@
 <script lang="ts">
+	import linkedInLogo from '$lib/assets/linkedin-icon.png';
 	import { NavItemEnum, type NavItem } from '$lib/types/NavItem';
 	import { twMerge } from 'tailwind-merge';
 
@@ -23,7 +24,7 @@
 		}
 	];
 
-	let mobileDrawerOpen = false;
+	let mobileDrawerOpen = true;
 </script>
 
 <nav class="w-full absolute text-white font-semibold">
@@ -47,9 +48,9 @@
 					</div>
 				</a>
 			</div>
-			<div class="relative p-4 bullet sm:hidden flex justify-center">
-				<button on:click={() => (mobileDrawerOpen = !mobileDrawerOpen)}>Menu</button>
-			</div>
+			<button on:click={() => (mobileDrawerOpen = !mobileDrawerOpen)}>
+				<div class="relative p-4 bullet sm:hidden flex justify-center">Menu</div>
+			</button>
 			<ul class="hidden sm:flex flex-row gap-10 items-center">
 				{#each navItems as item}
 					<li class="relative">
@@ -65,9 +66,46 @@
 			)}
 		>
 			<button
-				class="bg-primary h-20 w-20 rounded-full fixed top-4 right-4"
-				on:click={() => (mobileDrawerOpen = false)}>X</button
-			>
+				class="bg-primary h-16 w-16 rounded-full fixed top-4 right-4 flex justify-center items-center"
+				on:click={() => (mobileDrawerOpen = false)}
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width={1.5}
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+				</svg>
+			</button>
+			<div class="pt-36 pb-0 px-4 font-normal flex justify-between flex-col h-full">
+				<div>
+					<span>Navigation</span>
+					<hr class="my-2" />
+					<ul class="gap-5 flex flex-col my-11">
+						{#each navItems as item}
+							<li class="relative text-4xl">
+								<a href={item.url} class={item.title === activeLink ? 'selected-drawer' : ''}
+									>{item.title}</a
+								>
+							</li>
+						{/each}
+					</ul>
+				</div>
+				<div class="w-full h-full">
+					<a
+						href="https://www.linkedin.com/in/nick-malmquist/"
+						class="flex justify-center items-center h-full"
+					>
+						<img
+							src={linkedInLogo}
+							alt="LinkedIn"
+							class="w-[50%] transition-transform duration-700 hover:rotate-[360deg] max-w-44"
+						/>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </nav>
