@@ -9,7 +9,7 @@ spec:
   ports:
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
-      nodePort: {{ .Values.service.nodePort }}
+      # nodePort: {{ .Values.service.nodePort }}
       protocol: TCP
   selector:
     {{- include "helm-chart-malmquist-fe.selectorLabels" . | nindent 4 }}

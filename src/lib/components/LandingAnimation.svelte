@@ -38,7 +38,7 @@
 			top: 0%;
 		}
 		100% {
-			top: -100%;
+			top: -130%;
 		}
 	}
 	@keyframes slide-up-from-down {
@@ -48,11 +48,11 @@
 		30% {
 			top: 0%;
 		}
-		70% {
+		50% {
 			top: 0%;
 		}
 		100% {
-			top: -100%;
+			top: -130%;
 		}
 	}
 	@keyframes change-text {
