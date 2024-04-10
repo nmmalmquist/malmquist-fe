@@ -24,7 +24,7 @@
 		}
 	];
 
-	let mobileDrawerOpen = true;
+	let mobileDrawerOpen = false;
 </script>
 
 <nav class="w-full absolute text-white font-semibold">
@@ -130,6 +130,17 @@
 		bottom: 0;
 		height: 0.5rem;
 		width: 0.5rem;
+		background-color: theme(colors.white);
+		border-radius: 50%;
+	}
+	.selected-drawer::after {
+		content: '';
+		position: absolute;
+		transform: translate(50%, 50%);
+		right: 10%;
+		bottom: 50%;
+		height: 0.75rem;
+		width: 0.75rem;
 		background-color: theme(colors.white);
 		border-radius: 50%;
 	}
