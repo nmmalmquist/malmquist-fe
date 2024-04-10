@@ -4,6 +4,6 @@
 	import { NavItemEnum } from '$lib/types/NavItem';
 </script>
 
-<LandingAnimation displayText="About" />
+<LandingAnimation displayText={NavItemEnum.ABOUT} />
 <Navbar activeLink={NavItemEnum.ABOUT} />
 <main class="bg-gray w-screen h-screen flex justify-center font-raleway"></main>

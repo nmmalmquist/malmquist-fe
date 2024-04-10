@@ -2,7 +2,7 @@
 	import { NavItemEnum, type NavItem } from '$lib/types/NavItem';
 	import { twMerge } from 'tailwind-merge';
 
-	export let activeLink: NavItemEnum = NavItemEnum.NONE;
+	export let activeLink: NavItemEnum = NavItemEnum.HOME;
 
 	const navItems: NavItem[] = [
 		{
@@ -30,7 +30,7 @@
 	<div class="relative">
 		<div class="flex flex-row justify-between p-8">
 			<div class="p-4">
-				<a href="/" class={twMerge('group', activeLink === NavItemEnum.NONE && 'cursor-default')}>
+				<a href="/" class={twMerge('group', activeLink === NavItemEnum.HOME && 'cursor-default')}>
 					<div class="flex">
 						<div
 							class="block credit transition-transform ease-in-out sm:group-hover:rotate-[360deg] duration-500"

@@ -5,5 +5,5 @@
 </script>
 
 <LandingAnimation />
-<Navbar activeLink={NavItemEnum.NONE} />
+<Navbar activeLink={NavItemEnum.HOME} />
 <main class="bg-gray w-screen h-screen flex justify-center"></main>

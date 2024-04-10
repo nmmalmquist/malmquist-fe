@@ -8,5 +8,5 @@ export enum NavItemEnum {
 	PHOTOS = 'Photos',
 	ABOUT = 'About',
 	CONTACT = 'Contact',
-	NONE = 'none'
+	HOME = 'Home'
 }

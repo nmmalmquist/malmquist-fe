@@ -1,17 +1,30 @@
 <script lang="ts">
+	import { hydrated } from '$lib/hydrated';
+	import { NavItemEnum } from '$lib/types/NavItem';
 	import { twMerge } from 'tailwind-merge';
 
-	export let displayText: string = '';
+	export let displayText: NavItemEnum = NavItemEnum.HOME;
+
+	const determineLoadingAnimation = () => {
+		if (!$hydrated && displayText === NavItemEnum.HOME) return 'landing-animation-intro';
+		if ($hydrated) return 'landing-animation-navigate-up-from-down';
+		return 'landing-animation-navigate-up';
+	};
 </script>
 
 <div
 	class={twMerge(
 		'bg-dark fixed top-0 left-0 w-full h-screen z-10 flex justify-center items-center text-white',
-		displayText ? 'landing-animation-navigate' : 'landing-animation-intro'
+		determineLoadingAnimation()
 	)}
 >
-	<span class={twMerge('text-4xl', !displayText ? 'spin-through-text' : 'display-text-appear')}>
-		{displayText}
+	<span
+		class={twMerge(
+			'text-4xl',
+			displayText === NavItemEnum.HOME && !$hydrated ? 'spin-through-text' : 'display-text-appear'
+		)}
+	>
+		{$hydrated || displayText !== NavItemEnum.HOME ? displayText : ''}
 	</span>
 </div>
 
@@ -113,8 +126,11 @@
 	.landing-animation-intro {
 		animation: slide-up 3s forwards;
 	}
-	.landing-animation-navigate {
+	.landing-animation-navigate-up-from-down {
 		animation: slide-up-from-down 2s forwards ease-in-out;
+	}
+	.landing-animation-navigate-up {
+		animation: slide-up 2s forwards;
 	}
 
 	.spin-through-text::after {
