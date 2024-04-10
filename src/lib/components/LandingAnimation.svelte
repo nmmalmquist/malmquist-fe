@@ -10,7 +10,6 @@
 		displayText ? 'landing-animation-navigate' : 'landing-animation-intro'
 	)}
 >
-	<!-- <div class="absolute bg-dark h-0 rounded-full w-[150%] round-height-animation"></div> -->
 	<span class={twMerge('text-4xl', !displayText ? 'spin-through-text' : 'display-text-appear')}>
 		{displayText}
 	</span>
