@@ -4,6 +4,8 @@
 	import githubLogo from '$lib/assets/github-icon.png';
 	import { NavItemEnum, type NavItem } from '$lib/types/NavItem';
 	import { twMerge } from 'tailwind-merge';
+	import { isElementInVerticleViewport } from '$lib/utils/isElementInViewPort';
+	import { onMount } from 'svelte';
 
 	export let activeLink: NavItemEnum = NavItemEnum.HOME;
 
@@ -26,12 +28,64 @@
 		}
 	];
 
+	let navInView = true;
 	let mobileDrawerOpen = false;
+	let menuIconCircleElement: HTMLElement;
+	let navElement: HTMLElement;
+
+	const handleRenderMenuCircle = () => {
+		navInView = isElementInVerticleViewport(navElement);
+	};
+	onMount(async () => {
+		window.addEventListener('scroll', (e) => {
+			handleRenderMenuCircle();
+		});
+		await new Promise((r) => setTimeout(r, 2500));
+		handleRenderMenuCircle();
+	});
 </script>
 
-<nav class="w-full absolute text-white font-semibold">
+<nav bind:this={navElement} class="w-full absolute text-white font-semibold">
+	<button
+		bind:this={menuIconCircleElement}
+		class={twMerge(
+			'bg-primary h-16 w-16 rounded-full fixed top-4 right-4 flex justify-center items-center z-10 scale-0 transition-all',
+			(!navInView || mobileDrawerOpen) && 'scale-100'
+		)}
+		on:click={() => {
+			mobileDrawerOpen = !mobileDrawerOpen;
+		}}
+	>
+		{#if mobileDrawerOpen}
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width={1.5}
+				stroke="currentColor"
+				class="w-6 h-6"
+			>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+			</svg>
+		{:else}
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width={1.5}
+				stroke="currentColor"
+				class="w-6 h-6"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+				/>
+			</svg>
+		{/if}
+	</button>
 	<div class="relative">
-		<div class="flex flex-row justify-between p-8">
+		<div class="flex flex-row justify-between p-4">
 			<div class="p-4">
 				<a href="/" class={twMerge('group', activeLink === NavItemEnum.HOME && 'cursor-default')}>
 					<div class="flex">
@@ -50,7 +104,11 @@
 					</div>
 				</a>
 			</div>
-			<button on:click={() => (mobileDrawerOpen = !mobileDrawerOpen)}>
+			<button
+				on:click={() => {
+					mobileDrawerOpen = !mobileDrawerOpen;
+				}}
+			>
 				<div class="relative p-4 bullet sm:hidden flex justify-center">Menu</div>
 			</button>
 			<ul class="hidden sm:flex flex-row gap-10 items-center">
@@ -63,24 +121,10 @@
 		</div>
 		<div
 			class={twMerge(
-				'sm:hidden h-screen w-full p-4 bg-dark absolute top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
+				' h-screen w-full sm:w-[60%] md:w-[40%] lg:w-[30%] p-4 bg-dark fixed top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
 				mobileDrawerOpen && 'nav-drawer-active'
 			)}
 		>
-			<button
-				class="bg-primary h-16 w-16 rounded-full fixed top-4 right-4 flex justify-center items-center"
-				on:click={() => (mobileDrawerOpen = false)}
-				><svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width={1.5}
-					stroke="currentColor"
-					class="w-6 h-6"
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-				</svg>
-			</button>
 			<div class="pt-36 pb-0 px-4 font-normal flex justify-between flex-col h-full">
 				<div>
 					<span>Navigation</span>
@@ -95,7 +139,7 @@
 						{/each}
 					</ul>
 				</div>
-				<div class="w-full h-full px-10">
+				<div class="w-full h-full px-10 sm:px-8 md:px-6 lg:px-4">
 					<ul class="flex justify-between h-full">
 						<a
 							href="https://www.linkedin.com/in/nick-malmquist/"
@@ -127,7 +171,6 @@
 								class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44 bg-white rounded-full"
 							/>
 						</a>
-						
 					</ul>
 				</div>
 			</div>
