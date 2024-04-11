@@ -1,5 +1,7 @@
 <script lang="ts">
 	import linkedInLogo from '$lib/assets/linkedin-icon.png';
+	import instagramLogo from '$lib/assets/instagram-logo.webp';
+	import githubLogo from '$lib/assets/github-icon.png';
 	import { NavItemEnum, type NavItem } from '$lib/types/NavItem';
 	import { twMerge } from 'tailwind-merge';
 
@@ -24,7 +26,7 @@
 		}
 	];
 
-	let mobileDrawerOpen = false;
+	let mobileDrawerOpen = true;
 </script>
 
 <nav class="w-full absolute text-white font-semibold">
@@ -93,17 +95,40 @@
 						{/each}
 					</ul>
 				</div>
-				<div class="w-full h-full">
-					<a
-						href="https://www.linkedin.com/in/nick-malmquist/"
-						class="flex justify-center items-center h-full"
-					>
-						<img
-							src={linkedInLogo}
-							alt="LinkedIn"
-							class="w-[50%] transition-transform duration-700 hover:rotate-[360deg] max-w-44"
-						/>
-					</a>
+				<div class="w-full h-full px-10">
+					<ul class="flex justify-between h-full">
+						<a
+							href="https://www.linkedin.com/in/nick-malmquist/"
+							class="flex justify-center items-center h-full"
+						>
+							<img
+								src={linkedInLogo}
+								alt="LinkedIn"
+								class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44"
+							/>
+						</a>
+						<a
+							href="https://www.linkedin.com/in/nick-malmquist/"
+							class="flex justify-center items-center h-full"
+						>
+							<img
+								src={instagramLogo}
+								alt="Instagram"
+								class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44"
+							/>
+						</a>
+						<a
+							href="https://www.linkedin.com/in/nick-malmquist/"
+							class="flex justify-center items-center h-full"
+						>
+							<img
+								src={githubLogo}
+								alt="Github"
+								class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44 bg-white rounded-full"
+							/>
+						</a>
+						
+					</ul>
 				</div>
 			</div>
 		</div>
