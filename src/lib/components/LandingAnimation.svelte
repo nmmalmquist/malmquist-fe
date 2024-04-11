@@ -7,7 +7,7 @@
 
 	const determineLoadingAnimation = () => {
 		if (!$hydrated && displayText === NavItemEnum.HOME) return 'landing-animation-intro';
-		if ($hydrated) return 'landing-animation-navigate-up-from-down';
+		// if ($hydrated) return 'landing-animation-navigate-up-from-down';
 		return 'landing-animation-navigate-up';
 	};
 </script>

@@ -26,7 +26,7 @@
 		}
 	];
 
-	let mobileDrawerOpen = true;
+	let mobileDrawerOpen = false;
 </script>
 
 <nav class="w-full absolute text-white font-semibold">
