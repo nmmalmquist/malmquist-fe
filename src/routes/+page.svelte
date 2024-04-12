@@ -10,7 +10,7 @@
 	<section
 		class="bg-gray w-screen flex justify-center flex-col-reverse md:flex-col min-h-[110vh] pb-[10vh]"
 	>
-		<div class="w-full flex justify-between items-end md:flex-[1]">
+		<div class="w-full flex justify-between items-end md:flex-1">
 			<div class="flex items-center justify-center md:justify-between w-full mb-7 md:m-0">
 				<div class="bg-dark w-64 h-28 rounded-r-full hidden md:block"></div>
 				<div class="md:pr-[8%] flex items-center gap-2">
@@ -33,7 +33,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="flex items-end justify-center overflow-hidden">
+		<div class="flex items-end justify-center overflow-hidden flex-1 md:flex-none">
 			<h1 class=" whitespace-nowrap mt-10 text-white title-name">Nick Malmquist</h1>
 		</div>
 	</section>
