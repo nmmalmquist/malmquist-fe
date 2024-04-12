@@ -7,8 +7,10 @@
 <LandingAnimation />
 <Navbar activeLink={NavItemEnum.HOME} />
 <main>
-	<section class="bg-gray w-screen h-screen flex justify-center flex-col-reverse md:flex-col">
-		<div class="w-full flex justify-between items-end md:flex-1">
+	<section
+		class="bg-gray w-screen flex justify-center flex-col-reverse md:flex-col min-h-[110vh] pb-[10vh]"
+	>
+		<div class="w-full flex justify-between items-end md:flex-[1]">
 			<div class="flex items-center justify-center md:justify-between w-full mb-7 md:m-0">
 				<div class="bg-dark w-64 h-28 rounded-r-full hidden md:block"></div>
 				<div class="md:pr-[8%] flex items-center gap-2">
@@ -31,8 +33,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="flex flex-1 items-end justify-center">
-			<h1 class=" whitespace-nowrap my-10 text-white title-name">Nick Malmquist</h1>
+		<div class="flex items-end justify-center overflow-hidden">
+			<h1 class=" whitespace-nowrap mt-10 text-white title-name">Nick Malmquist</h1>
 		</div>
 	</section>
 	<section class="bg-dark w-screen h-screen flex justify-center"></section>
@@ -40,6 +42,7 @@
 
 <style>
 	.title-name {
-		font-size: max(9em, 15vw);
+		font-size: max(7em, 13vw);
+		line-height: 14rem;
 	}
 </style>
