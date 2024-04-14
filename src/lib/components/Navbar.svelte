@@ -92,7 +92,7 @@
 		<div class="flex flex-row justify-between p-4 sm:p-8">
 			<div class="p-4">
 				<a href="/" class={twMerge('group', activeLink === NavItemEnum.HOME && 'cursor-default')}>
-					<div class="flex">
+					<div class="flex magnetic">
 						<div
 							class="block credit transition-transform ease-in-out sm:group-hover:rotate-[360deg] duration-500"
 						>
@@ -117,7 +117,7 @@
 			</button>
 			<ul class="hidden sm:flex flex-row gap-10 items-center">
 				{#each navItems as item}
-					<li class="relative">
+					<li class="relative magnetic">
 						<a href={item.url} class={item.title === activeLink ? 'selected' : ''}>{item.title}</a>
 					</li>
 				{/each}
@@ -135,7 +135,7 @@
 					<hr class="my-2" />
 					<ul class="gap-5 flex flex-col my-11">
 						{#each navItems as item}
-							<li class="relative text-4xl">
+							<li class="relative text-4xl magnetic">
 								<a href={item.url} class={item.title === activeLink ? 'selected-drawer' : ''}
 									>{item.title}</a
 								>
