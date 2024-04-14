@@ -35,13 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<div
-				class="w-full flex flex-1 justify-center items-end md:items-center overflow-x-hidden"
-				data-scroll
-				data-scroll-direction="horizontal"
-				data-scroll-speed="4"
-				data-scroll-position="top"
-			>
+			<div class="w-full flex flex-1 justify-center items-end md:items-center overflow-x-hidden">
 				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
 				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
 				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>

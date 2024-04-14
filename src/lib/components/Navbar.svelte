@@ -46,44 +46,48 @@
 </script>
 
 <nav bind:this={navElement} class="w-full absolute text-white font-semibold">
-	<button
-		bind:this={menuIconCircleElement}
+	<div
 		class={twMerge(
-			'bg-primary h-16 w-16 rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 flex justify-center items-center z-20 scale-0 transition-all',
-			(!navInView || mobileDrawerOpen) && 'scale-100'
+			'magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 native-scale-0 z-20 transition-[scale]',
+			(!navInView || mobileDrawerOpen) && 'native-scale-100'
 		)}
-		on:click={() => {
-			mobileDrawerOpen = !mobileDrawerOpen;
-		}}
 	>
-		{#if mobileDrawerOpen}
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width={1.5}
-				stroke="currentColor"
-				class="w-6 h-6"
-			>
-				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-			</svg>
-		{:else}
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				fill="none"
-				viewBox="0 0 24 24"
-				stroke-width={1.5}
-				stroke="currentColor"
-				class="w-6 h-6"
-			>
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-				/>
-			</svg>
-		{/if}
-	</button>
+		<button
+			bind:this={menuIconCircleElement}
+			class={twMerge(' h-16 w-16   flex justify-center items-center')}
+			on:click={() => {
+				mobileDrawerOpen = !mobileDrawerOpen;
+			}}
+		>
+			{#if mobileDrawerOpen}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width={1.5}
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+				</svg>
+			{:else}
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width={1.5}
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+					/>
+				</svg>
+			{/if}
+		</button>
+	</div>
 	<div class="relative">
 		<div class="flex flex-row justify-between p-4 sm:p-8">
 			<div class="p-4">

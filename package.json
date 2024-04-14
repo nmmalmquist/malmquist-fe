@@ -36,6 +36,7 @@
 	"type": "module",
 	"dependencies": {
 		"@types/dom-view-transitions": "^1.0.4",
+		"gsap": "^3.12.5",
 		"locomotive-scroll": "^5.0.0-beta.11",
 		"tailwind-merge": "^2.2.2"
 	}
