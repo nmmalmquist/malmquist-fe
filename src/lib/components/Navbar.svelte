@@ -49,7 +49,7 @@
 	<button
 		bind:this={menuIconCircleElement}
 		class={twMerge(
-			'bg-primary h-16 w-16 rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 flex justify-center items-center z-10 scale-0 transition-all',
+			'bg-primary h-16 w-16 rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 flex justify-center items-center z-20 scale-0 transition-all',
 			(!navInView || mobileDrawerOpen) && 'scale-100'
 		)}
 		on:click={() => {
@@ -121,7 +121,7 @@
 		</div>
 		<div
 			class={twMerge(
-				' h-screen w-full sm:w-[60%] md:w-[40%] lg:w-[30%] p-4 bg-dark fixed top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
+				'z-10 h-screen w-full sm:w-[60%] md:w-[40%] lg:w-[30%] p-4 bg-dark fixed top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
 				mobileDrawerOpen && 'nav-drawer-active'
 			)}
 		>

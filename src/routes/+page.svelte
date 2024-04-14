@@ -2,12 +2,14 @@
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { NavItemEnum } from '$lib/types/NavItem';
+
+	const scrollForward = true;
 </script>
 
 <LandingAnimation />
 <Navbar activeLink={NavItemEnum.HOME} />
 <main>
-	<section class="bg-gray w-screen flex flex-col h-[110vh] pb-[10vh] justify-stretch items-stretch">
+	<section class="bg-gray w-screen flex flex-col h-[110vh] pb-[15vh] justify-stretch items-stretch">
 		<div class="w-full flex flex-1"></div>
 		<div class="w-full flex flex-col-reverse md:flex-col flex-[2]">
 			<div class="w-full flex md:flex-1">
@@ -33,8 +35,16 @@
 					</div>
 				</div>
 			</div>
-			<div class="w-full flex flex-1 justify-center items-end md:items-center overflow-x-hidden">
-				<h1 class=" whitespace-nowrap text-white title-name">—Nick Malmquist—</h1>
+			<div
+				class="w-full flex flex-1 justify-center items-end md:items-center overflow-x-hidden"
+				data-scroll
+				data-scroll-direction="horizontal"
+				data-scroll-speed="4"
+				data-scroll-position="top"
+			>
+				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
+				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
+				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
 			</div>
 		</div>
 	</section>
@@ -44,6 +54,19 @@
 <style>
 	.title-name {
 		font-size: max(7em, 13vw);
-		line-height: 14rem;
+		line-height: 16rem;
+	}
+	.text-move-forward {
+		white-space: nowrap;
+		animation: moveText 10s linear infinite;
+	}
+
+	@keyframes moveText {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(100%);
+		}
 	}
 </style>
