@@ -45,7 +45,7 @@
 	});
 </script>
 
-<nav bind:this={navElement} class="w-full absolute text-white font-semibold z-10">
+<nav bind:this={navElement} class="w-full absolute text-white font-semibold z-20">
 	<div
 		class={twMerge(
 			'magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 native-scale-0 z-20 transition-[scale]',

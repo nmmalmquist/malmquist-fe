@@ -14,7 +14,7 @@
 
 <div
 	class={twMerge(
-		'bg-dark fixed top-0 left-0 w-full h-screen z-20 flex justify-center items-center text-white',
+		'bg-dark fixed top-0 left-0 w-full h-screen z-30 flex justify-center items-center text-white',
 		determineLoadingAnimation()
 	)}
 >
