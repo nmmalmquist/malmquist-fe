@@ -1,9 +1,9 @@
 <script lang="ts">
+	import { onNavigate } from '$app/navigation';
 	import { hydrated } from '$lib/utils/hydrated.js';
+	import { initMagnetAnimation } from '$lib/utils/magnetic';
 	import { onMount } from 'svelte';
 	import '../app.css';
-	import { onNavigate } from '$app/navigation';
-	import { initMagnetAnimation } from '$lib/utils/magnetic';
 
 	// Enables page transition fading
 	onNavigate((navigation) => {
@@ -13,6 +13,7 @@
 			document.startViewTransition(async () => {
 				resolve();
 				await navigation.complete;
+				initMagnetAnimation(); // load back in magetic animation code
 			});
 		});
 	});

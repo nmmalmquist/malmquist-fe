@@ -6,7 +6,6 @@ export const initMagnetAnimation = () => {
 	magnets.forEach((magnet) => {
 		magnet.addEventListener('mousemove', moveMagnet);
 		magnet.addEventListener('mouseout', function (event) {
-			console.log(event.currentTarget);
 			gsap.to(event.currentTarget, 1, {
 				x: 0,
 				y: 0,

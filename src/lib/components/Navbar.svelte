@@ -1,11 +1,11 @@
 <script lang="ts">
-	import linkedInLogo from '$lib/assets/linkedin-icon.png';
-	import instagramLogo from '$lib/assets/instagram-logo.webp';
 	import githubLogo from '$lib/assets/github-icon.png';
+	import instagramLogo from '$lib/assets/instagram-logo.webp';
+	import linkedInLogo from '$lib/assets/linkedin-icon.png';
 	import { NavItemEnum, type NavItem } from '$lib/types/NavItem';
-	import { twMerge } from 'tailwind-merge';
 	import { isElementInVerticleViewport } from '$lib/utils/isElementInViewPort';
 	import { onMount } from 'svelte';
+	import { twMerge } from 'tailwind-merge';
 
 	export let activeLink: NavItemEnum = NavItemEnum.HOME;
 
@@ -45,7 +45,7 @@
 	});
 </script>
 
-<nav bind:this={navElement} class="w-full absolute text-white font-semibold">
+<nav bind:this={navElement} class="w-full absolute text-white font-semibold z-10">
 	<div
 		class={twMerge(
 			'magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 native-scale-0 z-20 transition-[scale]',

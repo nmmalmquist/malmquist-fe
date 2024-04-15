@@ -1,8 +1,9 @@
 <script lang="ts">
+	import GyroLottie from '$lib/assets/lottie/gyro.json';
+	import WeddingImage from '$lib/assets/nick-wedding.png';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { NavItemEnum } from '$lib/types/NavItem';
-	import GyroLottie from '$lib/assets/lottie/gyro.json';
 	import { onMount } from 'svelte';
 
 	let lottieImported = false;
@@ -13,11 +14,14 @@
 </script>
 
 <LandingAnimation />
-<Navbar activeLink={NavItemEnum.HOME} />
 <main>
-	<section class="bg-gray w-screen flex flex-col h-[110vh] pb-[15vh] justify-stretch items-stretch">
+	<section class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative">
+		<Navbar activeLink={NavItemEnum.HOME} />
+		<div class="w-full h-full absolute flex justify-center items-end z-0">
+			<img src={WeddingImage} class="h-[90%] object-cover" alt="background" />
+		</div>
 		<div class="w-full flex flex-1"></div>
-		<div class="w-full flex flex-col-reverse md:flex-col flex-[2]">
+		<div class="w-full flex flex-col-reverse md:flex-col flex-[2] pb-[15vh] z-10">
 			<div class="w-full flex md:flex-1">
 				<div class="flex items-center justify-center md:justify-between w-full mb-7 md:m-0">
 					<div
@@ -68,7 +72,7 @@
 				</div>
 			</div>
 			<div
-				class="w-full flex flex-1 justify-center items-end md:items-center overflow-x-hidden overscroll-y-none"
+				class="w-full flex flex-1 justify-center items-end md:items-center overflow-x-hidden overscroll-y-hidden"
 			>
 				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
 				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
@@ -81,12 +85,12 @@
 
 <style>
 	.title-name {
-		font-size: max(7em, 13vw);
-		line-height: 16rem;
+		font-size: max(7em, 12vw);
+		line-height: 12rem;
 	}
 	.text-move-forward {
 		white-space: nowrap;
-		animation: moveText 10s linear infinite;
+		animation: moveText 20s linear infinite;
 	}
 
 	@keyframes moveText {
