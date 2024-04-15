@@ -39,7 +39,9 @@
 							</lottie-player>
 						{/if}
 					</div>
-					<div class="px-4 sm:px-10 flex justify-between items-center w-full md:w-auto gap-4">
+					<div
+						class="mx-4 sm:mx-10 flex justify-between items-center w-full md:w-auto gap-4 bg-dark md:bg-transparent p-3 rounded-lg"
+					>
 						<div class="flex justify-center items-center gap-2">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
