@@ -193,7 +193,7 @@
 		width: 0.5rem;
 		height: 0.5rem;
 		border-radius: 50%;
-		background-color: theme(colors.white);
+		background-color: theme(colors.dark);
 	}
 	.selected::after {
 		content: '';
@@ -203,7 +203,7 @@
 		bottom: 0;
 		height: 0.5rem;
 		width: 0.5rem;
-		background-color: theme(colors.white);
+		background-color: theme(colors.dark);
 		border-radius: 50%;
 	}
 	.selected-drawer::after {
