@@ -126,7 +126,7 @@
 		</div>
 		<div
 			class={twMerge(
-				'z-10 h-screen w-full sm:w-[60%] md:w-[40%] lg:w-[30%] p-4 bg-dark fixed top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
+				'text-white z-10 h-screen w-full sm:w-[60%] md:w-[40%] lg:w-[30%] p-4 bg-dark fixed top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
 				mobileDrawerOpen && 'nav-drawer-active'
 			)}
 		>
