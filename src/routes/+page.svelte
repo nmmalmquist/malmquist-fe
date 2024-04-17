@@ -1,6 +1,6 @@
 <script lang="ts">
 	import GyroLottie from '$lib/assets/lottie/gyro.json';
-	import WeddingImage from '$lib/assets/nick-wedding.png';
+	import Logo from '$lib/assets/logo512.png';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { NavItemEnum } from '$lib/types/NavItem';
@@ -9,16 +9,35 @@
 	let lottieImported = false;
 	onMount(async () => {
 		await import('@lottiefiles/lottie-player');
+		const { initRollingText } = await import('$lib/utils/wordWrapScroll');
+		initRollingText();
 		lottieImported = true;
 	});
 </script>
 
 <LandingAnimation />
 <main>
-	<section class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative">
+	<section
+		class="bg-quaternary w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
+	>
 		<Navbar activeLink={NavItemEnum.HOME} />
-		<div class="w-full h-full absolute flex justify-center items-end z-0">
-			<img src={WeddingImage} class="h-[90%] object-cover" alt="background" />
+		<div
+			class="w-full h-full absolute flex justify-center items-end z-0"
+			data-scroll
+			data-scroll-speed="-.4"
+			data-scroll-position="top"
+		>
+			{#if lottieImported}
+				<lottie-player
+					autoplay
+					loop
+					mode="normal"
+					src={GyroLottie}
+					class="w-full h-full rounded-full"
+				>
+				</lottie-player>
+			{/if}
+			<!-- <img src={Logo} class="h-[90%] object-cover" alt="background" /> -->
 		</div>
 		<div class="w-full flex flex-1"></div>
 		<div class="w-full flex flex-col-reverse md:flex-col flex-[2] pb-[15vh] z-10">
@@ -42,14 +61,14 @@
 					<div
 						class="mx-4 sm:mx-10 flex justify-between items-center w-full md:w-auto gap-4 bg-dark md:bg-transparent p-3 rounded-lg"
 					>
-						<div class="flex justify-center items-center gap-2">
+						<div class="flex justify-center items-center gap-2 text-white md:text-dark">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke-width={1.5}
 								stroke="currentColor"
-								class="w-10 h-10 text-white flex-shrink-0"
+								class="w-10 h-10flex-shrink-0"
 							>
 								<path
 									stroke-linecap="round"
@@ -58,7 +77,7 @@
 								/>
 							</svg>
 
-							<h2 class="text-white text-3xl">Software Engineer</h2>
+							<h2 class="text-3xl">Software Engineer</h2>
 						</div>
 						{#if lottieImported}
 							<lottie-player
@@ -76,9 +95,11 @@
 			<div
 				class="w-full flex flex-1 justify-center items-end md:items-center overflow-x-hidden overscroll-y-hidden"
 			>
-				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
-				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
-				<h1 class=" whitespace-nowrap text-white title-name text-move-forward">—Nick Malmquist</h1>
+				<div class="wrapperRollingText whitespace-nowrap relative">
+					<div class="rollingText inline-block">
+						<h1 class=" whitespace-nowrap text-dark title-name">Nick Malmquist—</h1>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -89,18 +110,5 @@
 	.title-name {
 		font-size: max(7em, 12vw);
 		line-height: 12rem;
-	}
-	.text-move-forward {
-		white-space: nowrap;
-		animation: moveText 20s linear infinite;
-	}
-
-	@keyframes moveText {
-		0% {
-			transform: translateX(0%);
-		}
-		100% {
-			transform: translateX(100%);
-		}
 	}
 </style>

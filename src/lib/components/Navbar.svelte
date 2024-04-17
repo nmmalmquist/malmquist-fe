@@ -45,7 +45,7 @@
 	});
 </script>
 
-<nav bind:this={navElement} class="w-full absolute text-white font-semibold z-20">
+<nav bind:this={navElement} class="w-full absolute text-dark font-semibold z-20">
 	<div
 		class={twMerge(
 			'magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 native-scale-0 z-20 transition-[scale]',
@@ -54,7 +54,7 @@
 	>
 		<button
 			bind:this={menuIconCircleElement}
-			class={twMerge(' h-16 w-16   flex justify-center items-center')}
+			class={twMerge(' h-16 w-16   flex justify-center items-center text-white')}
 			on:click={() => {
 				mobileDrawerOpen = !mobileDrawerOpen;
 			}}
@@ -109,6 +109,7 @@
 				</a>
 			</div>
 			<button
+				class="magnetic"
 				on:click={() => {
 					mobileDrawerOpen = !mobileDrawerOpen;
 				}}
