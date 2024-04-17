@@ -1,6 +1,5 @@
 <script lang="ts">
 	import GyroLottie from '$lib/assets/lottie/gyro.json';
-	import Logo from '$lib/assets/logo512.png';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { NavItemEnum } from '$lib/types/NavItem';
@@ -59,9 +58,9 @@
 						{/if}
 					</div>
 					<div
-						class="mx-4 sm:mx-10 flex justify-between items-center w-full md:w-auto gap-4 bg-dark md:bg-transparent p-3 rounded-lg"
+						class="mx-4 sm:mx-10 flex justify-center md:justify-between items-center w-full md:w-auto gap-4 p-3"
 					>
-						<div class="flex justify-center items-center gap-2 text-white md:text-dark">
+						<div class="flex justify-center items-center gap-2 text-dark">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
@@ -79,16 +78,6 @@
 
 							<h2 class="text-3xl">Software Engineer</h2>
 						</div>
-						{#if lottieImported}
-							<lottie-player
-								autoplay
-								loop
-								mode="normal"
-								src={GyroLottie}
-								class="w-[4.5rem] h-[4.5rem] rounded-full md:hidden flex-shrink-0"
-							>
-							</lottie-player>
-						{/if}
 					</div>
 				</div>
 			</div>
