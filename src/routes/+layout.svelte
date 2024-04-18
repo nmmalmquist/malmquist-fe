@@ -4,6 +4,7 @@
 	import { initMagnetAnimation } from '$lib/utils/magnetic';
 	import { onMount } from 'svelte';
 	import '../app.css';
+	import '../cssLibrary/locomotive-style.css';
 
 	// Enables page transition fading
 	onNavigate((navigation) => {
@@ -19,7 +20,7 @@
 	});
 	onMount(async () => {
 		// Enables locomotive util for parallax scrolling effects
-		const locomotiveScroll = await import('$lib/utils/locomotive-style');
+		const { locomotiveScroll } = await import('$lib/utils/locomotive');
 		hydrated.setHydrated(); // To know if intro should be spun through
 		initMagnetAnimation();
 	});

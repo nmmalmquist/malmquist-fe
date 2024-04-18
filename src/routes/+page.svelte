@@ -8,16 +8,18 @@
 	let lottieImported = false;
 	onMount(async () => {
 		await import('@lottiefiles/lottie-player');
-		const { initRollingText } = await import('$lib/utils/wordWrapScroll');
+		const { initRollingText } = await import('$lib/utils/locomotive');
 		initRollingText();
 		lottieImported = true;
 	});
 </script>
 
-<LandingAnimation />
-<main>
+<!-- <LandingAnimation /> -->
+<main data-scroll-container>
 	<section
 		class="bg-quaternary w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
+		data-scroll-section
+		data-scroll-section-id="section0"
 	>
 		<Navbar activeLink={NavItemEnum.HOME} />
 		<div
@@ -25,6 +27,7 @@
 			data-scroll
 			data-scroll-speed="-.4"
 			data-scroll-position="top"
+			data-scroll-direction="horizontal"
 		>
 			{#if lottieImported}
 				<lottie-player
@@ -82,7 +85,11 @@
 				</div>
 			</div>
 			<div
-				class="w-full flex flex-1 justify-center items-end md:items-center overflow-x-hidden overscroll-y-hidden"
+				class="w-full flex flex-1 justify-center items-end md:items-center overscroll-y-hidden text-name"
+				data-scroll
+				data-scroll-direction="horizontal"
+				data-scroll-position="top"
+				data-scroll-speed="4"
 			>
 				<div class="wrapperRollingText whitespace-nowrap relative">
 					<div class="rollingText inline-block">
