@@ -2,8 +2,8 @@
 	import githubLogo from '$lib/assets/github-icon.png';
 	import instagramLogo from '$lib/assets/instagram-logo.webp';
 	import linkedInLogo from '$lib/assets/linkedin-icon.png';
+	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
 	import { NavItemEnum, type NavItem } from '$lib/types/NavItem';
-	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 
 	export let activeLink: NavItemEnum = NavItemEnum.HOME;
@@ -27,63 +27,11 @@
 		}
 	];
 	let navInView = false;
-	let mobileDrawerOpen = false;
-	let menuIconCircleElement: HTMLElement;
-	let navElement: HTMLElement;
-	let actionButtonElement: HTMLElement;
 
-	onMount(async () => {
-		// Action button animation and triggers
-		const { initActionButton } = await import('$lib/utils/locomotive');
-		initActionButton((value) => (navInView = value));
-	});
-	$: console.log(navInView);
+	let navElement: HTMLElement;
 </script>
 
 <nav bind:this={navElement} class="w-full absolute text-dark font-semibold z-20">
-	<div
-		bind:this={actionButtonElement}
-		class={twMerge(
-			'action-btn magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 z-20 transition-[scale] native-scale-0',
-			(!navInView || mobileDrawerOpen) && 'native-scale-100'
-		)}
-	>
-		<button
-			bind:this={menuIconCircleElement}
-			class={twMerge('h-16 w-16 flex justify-center items-center text-white')}
-			on:click={() => {
-				mobileDrawerOpen = !mobileDrawerOpen;
-			}}
-		>
-			{#if mobileDrawerOpen}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width={1.5}
-					stroke="currentColor"
-					class="w-6 h-6"
-				>
-					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-				</svg>
-			{:else}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width={1.5}
-					stroke="currentColor"
-					class="w-6 h-6"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-					/>
-				</svg>
-			{/if}
-		</button>
-	</div>
 	<div class="relative">
 		<div class="flex flex-row justify-between p-4 sm:p-8">
 			<div class="p-4">
@@ -107,7 +55,7 @@
 			<button
 				class="magnetic"
 				on:click={() => {
-					mobileDrawerOpen = !mobileDrawerOpen;
+					mobileDrawerOpen.update((isOpen) => !isOpen);
 				}}
 			>
 				<div class="relative p-4 bullet sm:hidden flex justify-center">Menu</div>
@@ -123,7 +71,7 @@
 		<div
 			class={twMerge(
 				'text-white z-10 h-screen w-full sm:w-[60%] md:w-[40%] lg:w-[30%] p-4 bg-dark fixed top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
-				mobileDrawerOpen && 'nav-drawer-active'
+				$mobileDrawerOpen && 'nav-drawer-active'
 			)}
 		>
 			<div class="pt-36 pb-0 px-4 font-normal flex justify-between flex-col h-full">

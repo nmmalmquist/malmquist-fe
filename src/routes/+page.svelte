@@ -15,6 +15,7 @@
 </script>
 
 <LandingAnimation />
+
 <main data-scroll-container>
 	<section
 		class="bg-quaternary w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
@@ -98,7 +99,11 @@
 			</div>
 		</div>
 	</section>
-	<section class="bg-dark w-screen h-screen flex justify-center"></section>
+	<section
+		class="bg-dark w-screen h-screen flex justify-center"
+		data-scroll-section
+		data-scroll-section-id="section1"
+	></section>
 </main>
 
 <style>
