@@ -3,7 +3,6 @@
 	import instagramLogo from '$lib/assets/instagram-logo.webp';
 	import linkedInLogo from '$lib/assets/linkedin-icon.png';
 	import { NavItemEnum, type NavItem } from '$lib/types/NavItem';
-	import { isElementInVerticleViewport } from '$lib/utils/isElementInViewPort';
 	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 
@@ -28,33 +27,25 @@
 		}
 	];
 
-	let navInView = true;
 	let mobileDrawerOpen = false;
 	let menuIconCircleElement: HTMLElement;
 	let navElement: HTMLElement;
 
-	const handleRenderMenuCircle = () => {
-		navInView = isElementInVerticleViewport(navElement);
-	};
 	onMount(async () => {
-		window.addEventListener('scroll', (e) => {
-			handleRenderMenuCircle();
-		});
 		await new Promise((r) => setTimeout(r, 2500));
-		handleRenderMenuCircle();
 	});
 </script>
 
 <nav bind:this={navElement} class="w-full absolute text-dark font-semibold z-20">
 	<div
 		class={twMerge(
-			'magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 native-scale-0 z-20 transition-[scale]',
-			(!navInView || mobileDrawerOpen) && 'native-scale-100'
+			'action-btn magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 native-scale-100 z-20 transition-[scale]',
+			mobileDrawerOpen && 'native-scale-0'
 		)}
 	>
 		<button
 			bind:this={menuIconCircleElement}
-			class={twMerge(' h-16 w-16   flex justify-center items-center text-white')}
+			class={twMerge('h-16 w-16 flex justify-center items-center text-white')}
 			on:click={() => {
 				mobileDrawerOpen = !mobileDrawerOpen;
 			}}
@@ -89,7 +80,7 @@
 		</button>
 	</div>
 	<div class="relative">
-		<div class="flex flex-row justify-between p-4 sm:p-8">
+		<div class="flex flex-row justify-between p-4 sm:p-8 nav">
 			<div class="p-4">
 				<a href="/" class={twMerge('group', activeLink === NavItemEnum.HOME && 'cursor-default')}>
 					<div class="flex magnetic">

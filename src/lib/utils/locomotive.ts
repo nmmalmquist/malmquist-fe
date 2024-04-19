@@ -8,7 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
  */
 export const locomotiveScroll = new LocomotiveScroll({
 	el: document.querySelector('[data-scroll-container]') as HTMLElement,
-	smooth: true
+	smooth: true,
+	multiplier: 1,
+	lerp: 0.07
 });
 
 window.onresize = locomotiveScroll.update();
@@ -118,3 +120,10 @@ function roll(targets: string, vars: { duration: number; ease?: string }, revers
 
 	return tl;
 }
+
+// ScrollTrigger.create({
+// 	trigger: '.nav',
+// 	start: 'bottom top',
+// 	markers: true,
+// 	toggleClass: { targets: '.action.btn', className: 'native-scale-100' }
+// });

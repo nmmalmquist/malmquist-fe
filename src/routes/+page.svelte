@@ -25,9 +25,8 @@
 		<div
 			class="w-full h-full absolute flex justify-center items-end z-0"
 			data-scroll
-			data-scroll-speed="-.4"
+			data-scroll-speed="-4"
 			data-scroll-position="top"
-			data-scroll-direction="horizontal"
 		>
 			{#if lottieImported}
 				<lottie-player
