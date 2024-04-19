@@ -1,3 +1,4 @@
+import { navInView } from '$lib/stores/navInView';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -38,17 +39,16 @@ ScrollTrigger.defaults({
 	scroller: document.querySelector('[data-scroll-container]')
 });
 
-export const initActionButton = (setNavInView: (value: boolean) => void) => {
+export const initActionButton = () => {
 	ScrollTrigger.create({
 		trigger: 'nav',
 		start: '-100% top', // add class when the the 10% margin passes through top of screen
 		onToggle: (self) => {
 			if (self.isActive) {
-				setNavInView(true);
+				navInView.update(() => true);
 			} else {
-				setNavInView(false);
+				navInView.update(() => false);
 			}
-			console.log('toggled, isActive:', self);
 		}
 	});
 };
