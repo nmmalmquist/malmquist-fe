@@ -4,10 +4,10 @@
 	import ActionButton from '$lib/components/ActionButton.svelte';
 	import NavDrawer from '$lib/components/NavDrawer.svelte';
 	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
-	import { navInView } from '$lib/stores/navInView';
 	import { hydrated } from '$lib/utils/hydrated.js';
 	import { initMagnetAnimation } from '$lib/utils/magnetic';
 	import { onMount } from 'svelte';
+	import { twMerge } from 'tailwind-merge';
 	import '../app.css';
 	import '../cssLibrary/locomotive-style.css';
 
@@ -29,10 +29,16 @@
 		hydrated.setHydrated(); // To know if intro should be spun through
 		initMagnetAnimation();
 	});
-	$: console.log(!$navInView, $mobileDrawerOpen);
 </script>
 
 <div class="font-raleway">
+	{#if $mobileDrawerOpen}
+		<div
+			class={twMerge(
+				'bg-gray w-full h-screen fixed opacity-40 z-20 transition-opacity duration-400 '
+			)}
+		></div>
+	{/if}
 	<ActionButton />
 	<NavDrawer />
 	<slot />
