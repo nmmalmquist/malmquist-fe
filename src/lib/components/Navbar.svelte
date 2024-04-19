@@ -26,21 +26,37 @@
 			url: '/contact'
 		}
 	];
-
+	let navInView = true;
 	let mobileDrawerOpen = false;
 	let menuIconCircleElement: HTMLElement;
 	let navElement: HTMLElement;
+	let actionButtonElement: HTMLElement;
 
 	onMount(async () => {
-		await new Promise((r) => setTimeout(r, 2500));
+		const { ScrollTrigger, gsap } = await import('gsap/all');
+		gsap.registerPlugin(ScrollTrigger);
+		// Action button animation and triggers
+		ScrollTrigger.create({
+			trigger: 'nav',
+			start: '-10% top', // add class when the the 10% margin passes through top of screen
+			onToggle: (self) => {
+				if (self.isActive) {
+					navInView = true;
+				} else {
+					navInView = false;
+				}
+				console.log('toggled, isActive:', self, navInView);
+			}
+		});
 	});
 </script>
 
 <nav bind:this={navElement} class="w-full absolute text-dark font-semibold z-20">
 	<div
+		bind:this={actionButtonElement}
 		class={twMerge(
-			'action-btn magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 native-scale-100 z-20 transition-[scale]',
-			mobileDrawerOpen && 'native-scale-0'
+			'action-btn magnetic bg-primary rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 z-20 transition-[scale] native-scale-0',
+			(!navInView || mobileDrawerOpen) && 'native-scale-100'
 		)}
 	>
 		<button
@@ -80,7 +96,7 @@
 		</button>
 	</div>
 	<div class="relative">
-		<div class="flex flex-row justify-between p-4 sm:p-8 nav">
+		<div class="flex flex-row justify-between p-4 sm:p-8">
 			<div class="p-4">
 				<a href="/" class={twMerge('group', activeLink === NavItemEnum.HOME && 'cursor-default')}>
 					<div class="flex magnetic">

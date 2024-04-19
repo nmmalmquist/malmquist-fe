@@ -14,7 +14,7 @@
 	});
 </script>
 
-<!-- <LandingAnimation /> -->
+<LandingAnimation />
 <main data-scroll-container>
 	<section
 		class="bg-quaternary w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"

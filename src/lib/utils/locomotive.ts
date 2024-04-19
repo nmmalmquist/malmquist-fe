@@ -68,7 +68,6 @@ export const initRollingText = () => {
 	const scroll = ScrollTrigger.create({
 		trigger: document.querySelector('[data-scroll-container]'),
 		onUpdate(self) {
-			console.log('nick');
 			if (self.direction !== direction) {
 				direction *= -1;
 				gsap.to([roll1], { timeScale: direction, overwrite: true });
@@ -120,10 +119,3 @@ function roll(targets: string, vars: { duration: number; ease?: string }, revers
 
 	return tl;
 }
-
-// ScrollTrigger.create({
-// 	trigger: '.nav',
-// 	start: 'bottom top',
-// 	markers: true,
-// 	toggleClass: { targets: '.action.btn', className: 'native-scale-100' }
-// });
