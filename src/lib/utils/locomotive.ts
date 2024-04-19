@@ -1,6 +1,6 @@
-import LocomotiveScroll from 'locomotive-scroll';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import LocomotiveScroll from 'locomotive-scroll';
 gsap.registerPlugin(ScrollTrigger);
 
 /**
@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 export const locomotiveScroll = new LocomotiveScroll({
 	el: document.querySelector('[data-scroll-container]') as HTMLElement,
 	smooth: true,
-	multiplier: 1,
 	lerp: 0.07
 });
 
@@ -28,6 +27,7 @@ ScrollTrigger.scrollerProxy('[data-scroll-container]', {
 	getBoundingClientRect() {
 		return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
 	},
+
 	// LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
 	pinType: (document.querySelector('[data-scroll-container]') as HTMLElement).style.transform
 		? 'transform'
@@ -37,6 +37,21 @@ ScrollTrigger.scrollerProxy('[data-scroll-container]', {
 ScrollTrigger.defaults({
 	scroller: document.querySelector('[data-scroll-container]')
 });
+
+export const initActionButton = (setNavInView: (value: boolean) => void) => {
+	ScrollTrigger.create({
+		trigger: 'nav',
+		start: '-100% top', // add class when the the 10% margin passes through top of screen
+		onToggle: (self) => {
+			if (self.isActive) {
+				setNavInView(true);
+			} else {
+				setNavInView(false);
+			}
+			console.log('toggled, isActive:', self);
+		}
+	});
+};
 
 /**
  * Remove Old Locomotive Scrollbar

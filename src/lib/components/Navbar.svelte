@@ -26,29 +26,18 @@
 			url: '/contact'
 		}
 	];
-	let navInView = true;
+	let navInView = false;
 	let mobileDrawerOpen = false;
 	let menuIconCircleElement: HTMLElement;
 	let navElement: HTMLElement;
 	let actionButtonElement: HTMLElement;
 
 	onMount(async () => {
-		const { ScrollTrigger, gsap } = await import('gsap/all');
-		gsap.registerPlugin(ScrollTrigger);
 		// Action button animation and triggers
-		ScrollTrigger.create({
-			trigger: 'nav',
-			start: '-10% top', // add class when the the 10% margin passes through top of screen
-			onToggle: (self) => {
-				if (self.isActive) {
-					navInView = true;
-				} else {
-					navInView = false;
-				}
-				console.log('toggled, isActive:', self, navInView);
-			}
-		});
+		const { initActionButton } = await import('$lib/utils/locomotive');
+		initActionButton((value) => (navInView = value));
 	});
+	$: console.log(navInView);
 </script>
 
 <nav bind:this={navElement} class="w-full absolute text-dark font-semibold z-20">
