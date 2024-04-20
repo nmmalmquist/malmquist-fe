@@ -46,19 +46,9 @@
 			<div class="w-full flex md:flex-1">
 				<div class="flex items-center justify-center md:justify-between w-full mb-7 md:m-0">
 					<div
-						class="bg-dark w-64 h-28 rounded-r-full hidden md:flex justify-between items-center py-3 pl-10 pr-4 text-white"
+						class="bg-dark w-64 h-28 rounded-r-full hidden md:flex justify-center items-center p-2 text-white"
 					>
-						<span class="text-lg">Located in Nashville, TN</span>
-						{#if lottieImported}
-							<lottie-player
-								autoplay
-								loop
-								mode="normal"
-								src={GyroLottie}
-								class="w-[4.5rem] h-[4.5rem] rounded-full"
-							>
-							</lottie-player>
-						{/if}
+						<span class="text-lg whitespace-nowrap">Located in Nashville, TN</span>
 					</div>
 					<div
 						class="mx-4 sm:mx-10 flex justify-center md:justify-between items-center w-full md:w-auto gap-4 p-3"
