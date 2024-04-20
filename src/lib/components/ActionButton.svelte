@@ -6,13 +6,13 @@
 
 <div
 	class={twMerge(
-		'action-btn btn magnetic bg-dark rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 z-30 transition-[scale] native-scale-0',
+		' h-16 w-16 action-btn btn magnetic bg-dark rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 z-30 transition-[scale] native-scale-0',
 		(!$navInView || $mobileDrawerOpen) && 'native-scale-100'
 	)}
 >
 	<button
 		class={twMerge(
-			'h-16 w-16 flex justify-center items-center text-white overflow-hidden relative rounded-full '
+			'flex justify-center items-center text-white overflow-hidden relative rounded-full w-full h-full'
 		)}
 		on:click={() => {
 			mobileDrawerOpen.update((isOpen) => !isOpen);
@@ -22,7 +22,7 @@
 			class=" w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary"
 		></div>
 		{#if $mobileDrawerOpen}
-			<div class="magnetic-text">
+			<div class="magnetic-text relative w-full h-full">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"

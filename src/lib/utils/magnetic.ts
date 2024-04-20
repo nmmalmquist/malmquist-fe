@@ -29,6 +29,7 @@ export const initMagnetAnimation = () => {
 		gsap.to(magnetElement, 1, {
 			x: ((mouseEvent.clientX - bounding.left) / magnetElement.offsetWidth - 0.5) * strength,
 			y: ((mouseEvent.clientY - bounding.top) / magnetElement.offsetHeight - 0.5) * strength,
+			rotate: '0.001deg',
 			ease: Power4.easeOut
 		});
 		gsap.to(magnetElement.querySelector('.magnetic-text'), 1.5, {
