@@ -10,6 +10,7 @@
 	import { twMerge } from 'tailwind-merge';
 	import '../app.css';
 	import '../cssLibrary/locomotive-style.css';
+	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
 
 	// Enables page transition fading
 	onNavigate((navigation) => {
@@ -28,6 +29,7 @@
 		const { locomotiveScroll } = await import('$lib/utils/locomotive');
 		hydrated.setHydrated(); // To know if intro should be spun through
 		initMagnetAnimation();
+		initFillAnimationButton();
 	});
 </script>
 

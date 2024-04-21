@@ -1,4 +1,4 @@
-import { Elastic, Power2, Power4, gsap } from 'gsap';
+import { Elastic, Power4, gsap } from 'gsap';
 export const initMagnetAnimation = () => {
 	const magnets = document.querySelectorAll('.magnetic');
 	const strength = 50;
@@ -11,11 +11,14 @@ export const initMagnetAnimation = () => {
 				y: 0,
 				ease: Elastic.easeOut
 			});
-			gsap.to((event.currentTarget as HTMLElement).querySelector('.magnetic-text'), 1.5, {
-				x: 0,
-				y: 0,
-				ease: Elastic.easeOut
-			});
+			const innerEl = (event.currentTarget as HTMLElement).querySelector('.magnetic-text');
+			if (innerEl) {
+				gsap.to(innerEl, 1.5, {
+					x: 0,
+					y: 0,
+					ease: Elastic.easeOut
+				});
+			}
 			// Removes the stupid remaining styling after animation
 			(event.currentTarget as HTMLElement).removeAttribute('style');
 		});
@@ -32,30 +35,16 @@ export const initMagnetAnimation = () => {
 			rotate: '0.001deg',
 			ease: Power4.easeOut
 		});
-		gsap.to(magnetElement.querySelector('.magnetic-text'), 1.5, {
-			x: ((mouseEvent.clientX - bounding.left) / magnetElement.offsetWidth - 0.5) * (strength / 3),
-			y: ((mouseEvent.clientY - bounding.top) / magnetElement.offsetHeight - 0.5) * (strength / 3),
-			rotate: '0.001deg',
-			ease: Power4.easeOut
-		});
+		const innerEl = magnetElement.querySelector('.magnetic-text') as HTMLElement;
+		if (innerEl) {
+			gsap.to(innerEl, 1.5, {
+				x:
+					((mouseEvent.clientX - bounding.left) / magnetElement.offsetWidth - 0.5) * (strength / 3),
+				y:
+					((mouseEvent.clientY - bounding.top) / magnetElement.offsetHeight - 0.5) * (strength / 3),
+				rotate: '0.001deg',
+				ease: Power4.easeOut
+			});
+		}
 	}
-
-	document.querySelector('.btn')?.addEventListener('mouseenter', function (event) {
-		const element = event.currentTarget as HTMLElement;
-
-		gsap.to(element.querySelector('.animate-button-fill'), 0.6, {
-			startAt: { y: '150%' },
-			y: '100%',
-			ease: Power2.easeInOut
-		});
-	});
-	document.querySelector('.btn')?.addEventListener('mouseleave', function (event) {
-		const element = event.currentTarget as HTMLElement;
-
-		gsap.to(element.querySelector('.animate-button-fill'), 0.6, {
-			startAt: { y: '100%' },
-			y: '0%',
-			ease: Power2.easeInOut
-		});
-	});
 };

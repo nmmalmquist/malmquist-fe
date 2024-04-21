@@ -6,7 +6,7 @@
 
 <div
 	class={twMerge(
-		' h-16 w-16 action-btn btn magnetic bg-dark rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 z-30 transition-[scale] native-scale-0',
+		' h-16 w-16 action-btn magnetic bg-dark rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 z-30 transition-[scale] native-scale-0',
 		(!$navInView || $mobileDrawerOpen) && 'native-scale-100'
 	)}
 >
@@ -19,10 +19,12 @@
 		}}
 	>
 		<div
-			class=" w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary"
+			class={twMerge(
+				'pointer-events-none w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary'
+			)}
 		></div>
 		{#if $mobileDrawerOpen}
-			<div class="magnetic-text relative w-full h-full">
+			<div class="magnetic-text z-10 pointer-events-none">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -35,7 +37,7 @@
 				</svg>
 			</div>
 		{:else}
-			<div class="magnetic-text">
+			<div class="magnetic-text z-10 pointer-events-none">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
