@@ -11,7 +11,7 @@
 	let navElement: HTMLElement;
 </script>
 
-<nav bind:this={navElement} class="w-full absolute text-dark font-semibold z-20">
+<nav bind:this={navElement} class="w-full absolute text-white font-semibold z-20">
 	<div class="relative">
 		<div class="flex flex-row justify-between p-4 sm:p-8">
 			<div class="p-4">

@@ -14,11 +14,11 @@
 	});
 </script>
 
-<LandingAnimation />
+<!-- <LandingAnimation /> -->
 
 <main data-scroll-container>
 	<section
-		class="bg-quaternary w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
+		class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
 		data-scroll-section
 		data-scroll-section-id="section0"
 	>
@@ -53,7 +53,7 @@
 					<div
 						class="mx-4 sm:mx-10 flex justify-center md:justify-between items-center w-full md:w-auto gap-4 p-3"
 					>
-						<div class="flex justify-center items-center gap-2 text-dark">
+						<div class="flex justify-center items-center gap-2 text-white">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
@@ -83,17 +83,40 @@
 			>
 				<div class="wrapperRollingText whitespace-nowrap relative">
 					<div class="rollingText inline-block">
-						<h1 class=" whitespace-nowrap text-dark title-name">Nick Malmquist—</h1>
+						<h1 class=" whitespace-nowrap text-white title-name">Nick Malmquist—</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section
-		class="bg-dark w-screen h-screen flex justify-center"
+		class="bg-secondary text-dark w-full h-screen flex flex-col px-10 py-10 md:px-[10%] md:py-24"
 		data-scroll-section
 		data-scroll-section-id="section1"
-	></section>
+	>
+		<div class="flex flex-col md:flex-row gap-2 md:gap-32">
+			<h2 class="text-3xl flex-[3] leading-[3.5rem]">
+				Solving software problems in the information systems era. A solution always exists. It's my
+				job to figure it out.
+			</h2>
+			<div class="flex flex-1 md:flex-col items-center">
+				<h3 class="text-lg leading-[2rem] flex-1">
+					The uncanny passion for code and creating tangible solutions drives my success
+				</h3>
+				<div class="magnetic flex-1 md:flex-none flex justify-end">
+					<button
+						class="w-48 h-48 bg-dark btn rounded-full flex justify-center items-center text-white overflow-hidden relative"
+						data-scroll
+						data-scroll-speed="2"
+						><h3 class="magnetic-text z-10">About Me</h3>
+						<div
+							class="pointer-events-none w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary"
+						></div></button
+					>
+				</div>
+			</div>
+		</div>
+	</section>
 </main>
 
 <style>

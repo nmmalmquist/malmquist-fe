@@ -7,12 +7,11 @@ export default {
 		colors: {
 			transparent: 'transparent',
 			current: 'currentColor',
-			primary: '#1ba8fa',
-			secondary: '#DAC0A3',
-			tertiary: '#EADBC8',
-			quaternary: '#FEFAF6',
+			primary: '#76ABAE',
+			secondary: '#EEEEEE',
+			tertiary: '#31363F',
 			white: '#ffffff',
-			dark: '#1C1D20',
+			dark: '#222831',
 			gray: '#999D9E'
 		},
 		extend: {
