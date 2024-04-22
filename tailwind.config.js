@@ -12,7 +12,8 @@ export default {
 			tertiary: '#31363F',
 			white: '#ffffff',
 			dark: '#222831',
-			gray: '#999D9E'
+			gray: '#999D9E',
+			lightgray: '#d3d3d3'
 		},
 		extend: {
 			fontFamily: {

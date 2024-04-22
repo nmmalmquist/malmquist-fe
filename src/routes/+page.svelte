@@ -1,8 +1,8 @@
 <script lang="ts">
 	import GyroLottie from '$lib/assets/lottie/gyro.json';
-	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { NavItemEnum } from '$lib/types/NavItem';
+	import type { RecentWork } from '$lib/types/RecentWork';
 	import { onMount } from 'svelte';
 
 	let lottieImported = false;
@@ -12,6 +12,31 @@
 		initRollingText();
 		lottieImported = true;
 	});
+
+	const recentWorkItems: RecentWork[] = [
+		{
+			company: 'CGI',
+			industry: 'Insurance',
+			desription: 'Application Development',
+			tools: ['NextJS', 'API', 'MaterialUI']
+		},
+		{
+			company: 'CGI',
+			industry: 'Accounting',
+			desription: 'Application Development',
+			tools: ['React', 'Serverless', 'AWS', 'Python', 'MySQL', 'DynamoDB']
+		},
+		{
+			company: 'Insitely',
+			desription: 'Application Development',
+			tools: ['React', 'GraphQL', 'Node Express', 'MongoDB']
+		},
+		{
+			company: 'MBUSI',
+			desription: 'RPA Development',
+			tools: ['BluePrism', 'VBA', 'SAP']
+		}
+	];
 </script>
 
 <!-- <LandingAnimation /> -->
@@ -103,27 +128,49 @@
 				<h3 class="text-lg leading-[2rem] flex-1">
 					The uncanny passion for code and creating tangible solutions drives my success
 				</h3>
-				<div class="magnetic flex-1 md:flex-none flex justify-center md:mt-10">
-					<button
+				<div
+					class="magnetic flex-1 md:flex-none flex justify-center md:mt-10 z-30"
+					data-scroll
+					data-scroll-speed="2"
+				>
+					<a
+						href="/about"
 						class="w-32 h-32 lg:w-44 lg:h-44 bg-dark btn rounded-full flex justify-center items-center text-white overflow-hidden relative"
-						data-scroll
-						data-scroll-speed="2"
 						><h3 class="magnetic-text z-10">About Me</h3>
 						<div
 							class="pointer-events-none w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary"
-						></div></button
+						></div></a
 					>
 				</div>
 			</div>
 		</div>
-	</section>
-	<section
-		class="bg-secondary text-dark w-full h-[200vh] flex flex-col px-10 md:px-[10%] xl:px-[17%] -mt-1"
-		data-scroll-section
-		data-scroll-section-id="section2"
-	>
 		<h3>Recent Work</h3>
-		<hr class="my-6" />
+		<ul>
+			{#each recentWorkItems as item}
+				<li><hr class="my-6 text-lightgray" /></li>
+				<li class="justify-between py-10 w-full grid grid-cols-1 md:grid-cols-2 px-10">
+					<div class="flex items-end">
+						<h4 class="text-8xl font-semibold">
+							{item.company}
+							{#if item.industry}
+								<span class="text-3xl italic">{item.industry}</span>
+							{/if}
+						</h4>
+					</div>
+					<div class="flex flex-col items-center justify-center font-semibold">
+						<span>{item.desription}</span>
+						<span class="flex items-center justify-center font-normal text-lg">
+							{#each item.tools as tool, i}
+								{#if i > 0}
+									{'  '}|{'  '}
+								{/if}
+								{tool}
+							{/each}
+						</span>
+					</div>
+				</li>
+			{/each}
+		</ul>
 	</section>
 </main>
 

@@ -12,16 +12,14 @@ const innerFillForButtonTranslationIN = (button: HTMLElement) => {
 		ease: Power2.easeInOut
 	});
 };
+const innerFillForButtonTranslationOUT = (button: HTMLElement) => {
+	gsap.to(button.querySelector('.animate-button-fill'), 0.6, {
+		y: '0%',
+		ease: Power2.easeInOut
+	});
+};
 
 export const initFillAnimationButton = () => {
-	const innerFillForButtonTranslationOUT = (button: HTMLElement) => {
-		gsap.to(button.querySelector('.animate-button-fill'), 0.6, {
-			startAt: { y: '100%' },
-			y: '0%',
-			ease: Power2.easeInOut
-		});
-	};
-
 	document.querySelector('.action-btn')?.addEventListener('mouseenter', function (event) {
 		if (localVarDrawerIsActive) {
 			return;

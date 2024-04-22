@@ -4,13 +4,13 @@
 	import ActionButton from '$lib/components/ActionButton.svelte';
 	import NavDrawer from '$lib/components/NavDrawer.svelte';
 	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
+	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
 	import { hydrated } from '$lib/utils/hydrated.js';
 	import { initMagnetAnimation } from '$lib/utils/magnetic';
 	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import '../app.css';
 	import '../cssLibrary/locomotive-style.css';
-	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
 
 	// Enables page transition fading
 	onNavigate((navigation) => {
@@ -20,6 +20,7 @@
 			document.startViewTransition(async () => {
 				resolve();
 				await navigation.complete;
+				const { locomotiveScroll } = await import('$lib/utils/locomotive');
 				initMagnetAnimation(); // load back in magetic animation code
 			});
 		});

@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 export const locomotiveScroll = new LocomotiveScroll({
 	el: document.querySelector('[data-scroll-container]') as HTMLElement,
 	smooth: true,
-	lerp: 0.07,
 	scrollbarClass: 'bg-transparent'
 });
 
