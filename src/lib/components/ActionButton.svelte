@@ -19,9 +19,7 @@
 		}}
 	>
 		<div
-			class={twMerge(
-				'pointer-events-none w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary'
-			)}
+			class="pointer-events-none w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary"
 		></div>
 		{#if $mobileDrawerOpen}
 			<div class="magnetic-text z-10 pointer-events-none">

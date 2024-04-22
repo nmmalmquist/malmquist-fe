@@ -16,7 +16,7 @@
 
 <!-- <LandingAnimation /> -->
 
-<main data-scroll-container>
+<main data-scroll-container class="fixed will-change-transform">
 	<section
 		class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
 		data-scroll-section
@@ -90,7 +90,7 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary text-dark w-full h-screen flex flex-col px-10 py-10 md:px-[10%] md:py-24"
+		class="bg-secondary text-dark w-full flex flex-col px-10 pt-10 md:px-[10%] xl:px-[17%] md:pt-24 -mt-1"
 		data-scroll-section
 		data-scroll-section-id="section1"
 	>
@@ -103,9 +103,9 @@
 				<h3 class="text-lg leading-[2rem] flex-1">
 					The uncanny passion for code and creating tangible solutions drives my success
 				</h3>
-				<div class="magnetic flex-1 md:flex-none flex justify-end">
+				<div class="magnetic flex-1 md:flex-none flex justify-center md:mt-10">
 					<button
-						class="w-48 h-48 bg-dark btn rounded-full flex justify-center items-center text-white overflow-hidden relative"
+						class="w-32 h-32 lg:w-44 lg:h-44 bg-dark btn rounded-full flex justify-center items-center text-white overflow-hidden relative"
 						data-scroll
 						data-scroll-speed="2"
 						><h3 class="magnetic-text z-10">About Me</h3>
@@ -116,6 +116,14 @@
 				</div>
 			</div>
 		</div>
+	</section>
+	<section
+		class="bg-secondary text-dark w-full h-[200vh] flex flex-col px-10 md:px-[10%] xl:px-[17%] -mt-1"
+		data-scroll-section
+		data-scroll-section-id="section2"
+	>
+		<h3>Recent Work</h3>
+		<hr class="my-6" />
 	</section>
 </main>
 

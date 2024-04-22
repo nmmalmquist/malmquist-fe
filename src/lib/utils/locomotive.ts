@@ -10,7 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 export const locomotiveScroll = new LocomotiveScroll({
 	el: document.querySelector('[data-scroll-container]') as HTMLElement,
 	smooth: true,
-	lerp: 0.07
+	lerp: 0.07,
+	scrollbarClass: 'bg-transparent'
 });
 
 window.onresize = locomotiveScroll.update();
@@ -52,16 +53,6 @@ export const initActionButton = () => {
 		}
 	});
 };
-
-/**
- * Remove Old Locomotive Scrollbar
- */
-
-const scrollbar = document.querySelectorAll('.c-scrollbar');
-
-if (scrollbar.length > 1) {
-	scrollbar[0].remove();
-}
 
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
 ScrollTrigger.addEventListener('refresh', () => {

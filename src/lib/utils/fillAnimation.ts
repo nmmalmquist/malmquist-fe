@@ -5,14 +5,15 @@ let localVarDrawerIsActive: boolean = false;
 // const activeActionButtonHover: boolean = false;
 mobileDrawerOpen.subscribe((value) => (localVarDrawerIsActive = value));
 
+const innerFillForButtonTranslationIN = (button: HTMLElement) => {
+	gsap.to(button.querySelector('.animate-button-fill'), 0.6, {
+		startAt: { y: '150%' },
+		y: '100%',
+		ease: Power2.easeInOut
+	});
+};
+
 export const initFillAnimationButton = () => {
-	const innerFillForButtonTranslationIN = (button: HTMLElement) => {
-		gsap.to(button.querySelector('.animate-button-fill'), 0.6, {
-			startAt: { y: '150%' },
-			y: '100%',
-			ease: Power2.easeInOut
-		});
-	};
 	const innerFillForButtonTranslationOUT = (button: HTMLElement) => {
 		gsap.to(button.querySelector('.animate-button-fill'), 0.6, {
 			startAt: { y: '100%' },
