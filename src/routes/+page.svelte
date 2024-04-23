@@ -1,5 +1,6 @@
 <script lang="ts">
 	import GyroLottie from '$lib/assets/lottie/gyro.json';
+	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { NavItemEnum } from '$lib/types/NavItem';
@@ -71,7 +72,7 @@
 	];
 </script>
 
-<!-- <LandingAnimation /> -->
+<LandingAnimation />
 <main data-scroll-container>
 	<section
 		class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
@@ -210,6 +211,40 @@
 						</a>
 					</li>
 				{/each}
+			</ul>
+		</div>
+	</section>
+	<section
+		class="bg-secondary text-dark w-full flex-col pt-24 -mt-1 hidden md:flex h-[200vh]"
+		data-scroll-section
+		data-scroll-section-id="section2"
+	>
+		<div class=" w-full h-72 flex flex-col">
+			<ul
+				class="flex gap-8 py-8 h-full w-full"
+				data-scroll
+				data-scroll-direction="horizontal"
+				data-scroll-position="top"
+				data-scroll-speed=".8"
+			>
+				<li class="bg-gray w-96 h-full flex-none"></li>
+				<li class="bg-gray w-96 h-full flex-none"></li>
+				<li class="bg-gray w-96 h-full flex-none"></li>
+				<li class="bg-gray w-96 h-full flex-none"></li>
+			</ul>
+		</div>
+		<div class=" w-full h-72 flex flex-col justify-center items-center">
+			<ul
+				class="flex gap-8 py-8 h-full w-full"
+				data-scroll
+				data-scroll-direction="horizontal"
+				data-scroll-position="bottom"
+				data-scroll-speed="-.8"
+			>
+				<li class="bg-gray w-96 h-full flex-none"></li>
+				<li class="bg-gray w-96 h-full flex-none"></li>
+				<li class="bg-gray w-96 h-full flex-none"></li>
+				<li class="bg-gray w-96 h-full flex-none"></li>
 			</ul>
 		</div>
 	</section>
