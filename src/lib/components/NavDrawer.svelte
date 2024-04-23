@@ -10,7 +10,7 @@
 
 <div
 	class={twMerge(
-		'text-white z-20 h-screen w-full sm:w-[60%] md:w-[40%] lg:w-[30%] p-4 bg-dark fixed top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
+		'text-white z-30 h-screen w-full sm:w-[60%] md:w-[40%] lg:w-[30%] p-4 bg-dark fixed top-0 right-0 translate-x-[100%] transition-transform duration-1000 ease-in-out',
 		$mobileDrawerOpen && 'nav-drawer-active'
 	)}
 >
@@ -68,17 +68,6 @@
 </div>
 
 <style lang="postcss">
-	.selected::after {
-		content: '';
-		position: absolute;
-		transform: translate(50%, 100%);
-		right: 50%;
-		bottom: 0;
-		height: 0.5rem;
-		width: 0.5rem;
-		background-color: theme(colors.dark);
-		border-radius: 50%;
-	}
 	.selected-drawer::after {
 		content: '';
 		position: absolute;

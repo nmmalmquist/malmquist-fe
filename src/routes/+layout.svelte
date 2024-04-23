@@ -4,9 +4,7 @@
 	import ActionButton from '$lib/components/ActionButton.svelte';
 	import NavDrawer from '$lib/components/NavDrawer.svelte';
 	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
-	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
 	import { hydrated } from '$lib/utils/hydrated.js';
-	import { initMagnetAnimation } from '$lib/utils/magnetic';
 	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 	import '../app.css';
@@ -33,7 +31,7 @@
 	{#if $mobileDrawerOpen}
 		<div
 			class={twMerge(
-				'bg-gray w-full h-screen fixed opacity-40 z-20 transition-opacity duration-400 '
+				'bg-gray w-full h-screen fixed opacity-40 z-30 transition-opacity duration-400 '
 			)}
 		></div>
 	{/if}

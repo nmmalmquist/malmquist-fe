@@ -1,6 +1,7 @@
 <script lang="ts">
 	import GyroLottie from '$lib/assets/lottie/gyro.json';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import { activeLink } from '$lib/stores/activeLink';
 	import { NavItemEnum } from '$lib/types/NavItem';
 	import type { RecentWork } from '$lib/types/RecentWork';
 	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
@@ -8,6 +9,8 @@
 	import type { ScrollTrigger } from 'gsap/all';
 	import type LocomotiveScroll from 'locomotive-scroll';
 	import { onMount } from 'svelte';
+
+	activeLink.update(() => NavItemEnum.HOME);
 
 	let lottieImported = false;
 	onMount(() => {
@@ -76,7 +79,7 @@
 		data-scroll-section
 		data-scroll-section-id="section0"
 	>
-		<Navbar activeLink={NavItemEnum.HOME} />
+		<Navbar />
 		<div
 			class="w-full h-full absolute flex justify-center items-end z-0"
 			data-scroll

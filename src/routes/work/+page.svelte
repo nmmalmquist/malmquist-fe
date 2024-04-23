@@ -1,12 +1,13 @@
 <script>
-	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import { activeLink } from '$lib/stores/activeLink';
 	import { NavItemEnum } from '$lib/types/NavItem';
-	import { onMount } from 'svelte';
+
+	activeLink.update(() => NavItemEnum.WORK);
 </script>
 
 <!-- <LandingAnimation displayText={NavItemEnum.WORK} /> -->
-<Navbar activeLink={NavItemEnum.WORK} />
+<Navbar />
 <div data-scroll-container class="h-[120vh] w-full pt-20 bg-white">
 	<div data-scroll-section>
 		<h1 data-scroll>Hey</h1>
