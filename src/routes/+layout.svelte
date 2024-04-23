@@ -20,17 +20,12 @@
 			document.startViewTransition(async () => {
 				resolve();
 				await navigation.complete;
-				const { locomotiveScroll } = await import('$lib/utils/locomotive');
-				initMagnetAnimation(); // load back in magetic animation code
 			});
 		});
 	});
-	onMount(async () => {
+	onMount(() => {
 		// Enables locomotive util for parallax scrolling effects
-		const { locomotiveScroll } = await import('$lib/utils/locomotive');
 		hydrated.setHydrated(); // To know if intro should be spun through
-		initMagnetAnimation();
-		initFillAnimationButton();
 	});
 </script>
 

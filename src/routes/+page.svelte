@@ -1,16 +1,48 @@
 <script lang="ts">
 	import GyroLottie from '$lib/assets/lottie/gyro.json';
+	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { NavItemEnum } from '$lib/types/NavItem';
 	import type { RecentWork } from '$lib/types/RecentWork';
+	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
+	import { initMagnetAnimation } from '$lib/utils/magnetic';
+	import type { ScrollTrigger } from 'gsap/all';
+	import type LocomotiveScroll from 'locomotive-scroll';
 	import { onMount } from 'svelte';
 
 	let lottieImported = false;
-	onMount(async () => {
-		await import('@lottiefiles/lottie-player');
-		const { initRollingText } = await import('$lib/utils/locomotive');
-		initRollingText();
-		lottieImported = true;
+	onMount(() => {
+		console.log('nick');
+		let scroll: LocomotiveScroll;
+		let rollingTextTrigger: ScrollTrigger;
+		let actionButtonTrigger: ScrollTrigger;
+
+		import('@lottiefiles/lottie-player').then(() => {
+			lottieImported = true;
+		});
+		import('$lib/utils/locomotive').then((mod) => {
+			mod.createRollingTextScrollTrigger();
+			if (scroll) {
+				scroll.destroy();
+			}
+			scroll = mod.createScroller();
+			console.log(scroll);
+			rollingTextTrigger = mod.createRollingTextScrollTrigger();
+			actionButtonTrigger = mod.createActionButtonScrollTrigger();
+			initMagnetAnimation();
+			initFillAnimationButton();
+		});
+		return () => {
+			if (scroll) {
+				scroll.destroy();
+			}
+			if (rollingTextTrigger) {
+				rollingTextTrigger.kill();
+			}
+			if (actionButtonTrigger) {
+				actionButtonTrigger.kill();
+			}
+		};
 	});
 
 	const recentWorkItems: RecentWork[] = [
@@ -39,7 +71,7 @@
 	];
 </script>
 
-<!-- <LandingAnimation /> -->
+<LandingAnimation />
 
 <main data-scroll-container class="fixed will-change-transform">
 	<section

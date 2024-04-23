@@ -5,13 +5,9 @@
 	import { navItems } from '$lib/constants/NavItems';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
+	import type { ScrollTrigger } from 'gsap/all';
 	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
-
-	onMount(async () => {
-		const { locomotiveScroll, initActionButton } = await import('$lib/utils/locomotive');
-		initActionButton();
-	});
 </script>
 
 <div
