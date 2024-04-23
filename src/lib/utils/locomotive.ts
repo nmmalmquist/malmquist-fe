@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 export const createScroller = () => {
 	ScrollTrigger.clearMatchMedia('[data-scroll-container]');
 	ScrollTrigger.killAll();
-	console.log('in ST');
 	/**
 	 * Enables smooth scrolling and parralax
 	 */
@@ -49,7 +48,6 @@ export const createScroller = () => {
 
 	// after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 	ScrollTrigger.refresh();
-	console.log('out ST');
 	return locomotiveScroll;
 };
 

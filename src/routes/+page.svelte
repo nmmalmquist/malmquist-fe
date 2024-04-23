@@ -26,7 +26,6 @@
 				scroll.destroy();
 			}
 			scroll = mod.createScroller();
-			console.log(scroll);
 			rollingTextTrigger = mod.createRollingTextScrollTrigger();
 			actionButtonTrigger = mod.createActionButtonScrollTrigger();
 			initMagnetAnimation();
@@ -71,9 +70,8 @@
 	];
 </script>
 
-<LandingAnimation />
-
-<main data-scroll-container class="fixed will-change-transform">
+<!-- <LandingAnimation /> -->
+<main data-scroll-container>
 	<section
 		class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
 		data-scroll-section
