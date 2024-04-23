@@ -14,7 +14,6 @@
 
 	let lottieImported = false;
 	onMount(() => {
-		console.log('nick');
 		let scroll: LocomotiveScroll;
 		let rollingTextTrigger: ScrollTrigger;
 		let actionButtonTrigger: ScrollTrigger;
@@ -181,29 +180,34 @@
 			<ul>
 				{#each recentWorkItems as item}
 					<li><hr class="my-6 text-lightgray" /></li>
-					<li class=" py-10 w-full grid grid-cols-1 md:grid-cols-2 px-10">
-						<div class="flex flex-col items-center justify-center">
-							<h4 class="text-7xl sm:text-8xl font-semibold text-center">
-								{item.company}
-								{#if item.industry}
-									<span class="text-3xl italic hidden lg:inline">{item.industry}</span>
-								{/if}
-							</h4>
-							{#if item.industry}
-								<span class="text-3xl italic lg:hidden">{item.industry}</span>
-							{/if}
-						</div>
-						<div class="flex flex-col items-center justify-center font-semibold mt-4 md:mt-0">
-							<span class="text-center">{item.desription}</span>
-							<span class="flex items-center justify-center font-normal text-lg text-center">
-								{#each item.tools as tool, i}
-									{#if i > 0}
-										{'  '}|{'  '}
+					<li class="group">
+						<a
+							href="#a"
+							class="w-full grid grid-cols-1 md:grid-cols-2 py-10 px-10 transition-all duration-500 md:group-hover:text-gray md:group-hover:px-6"
+						>
+							<div class="flex flex-col items-center justify-center">
+								<h4 class="text-7xl sm:text-8xl font-semibold text-center">
+									{item.company}
+									{#if item.industry}
+										<span class="text-3xl italic hidden lg:inline">{item.industry}</span>
 									{/if}
-									{tool}
-								{/each}
-							</span>
-						</div>
+								</h4>
+								{#if item.industry}
+									<span class="text-3xl italic lg:hidden">{item.industry}</span>
+								{/if}
+							</div>
+							<div class="flex flex-col items-center justify-center font-semibold mt-4 md:mt-0">
+								<span class="text-center">{item.desription}</span>
+								<span class="flex items-center justify-center font-normal text-lg text-center">
+									{#each item.tools as tool, i}
+										{#if i > 0}
+											{'  '}|{'  '}
+										{/if}
+										{tool}
+									{/each}
+								</span>
+							</div>
+						</a>
 					</li>
 				{/each}
 			</ul>
