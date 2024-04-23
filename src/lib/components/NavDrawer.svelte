@@ -5,8 +5,6 @@
 	import { navItems } from '$lib/constants/NavItems';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
-	import type { ScrollTrigger } from 'gsap/all';
-	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
 </script>
 
@@ -23,8 +21,10 @@
 			<ul class="gap-5 flex flex-col my-11">
 				{#each navItems as item}
 					<li class="relative text-4xl magnetic">
-						<a href={item.url} class={item.title === $activeLink ? 'selected-drawer' : ''}
-							>{item.title}</a
+						<a
+							href={item.url}
+							class={item.title === $activeLink ? 'selected-drawer' : ''}
+							on:click={() => mobileDrawerOpen.update((isOpen) => !isOpen)}>{item.title}</a
 						>
 					</li>
 				{/each}

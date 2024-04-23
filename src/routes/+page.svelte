@@ -158,7 +158,7 @@
 					The uncanny passion for code and creating tangible solutions drives my success
 				</h3>
 				<div
-					class="magnetic flex-1 md:flex-none flex justify-center md:mt-10 z-30"
+					class="magnetic flex-1 md:flex-none flex justify-center md:mt-10"
 					data-scroll
 					data-scroll-speed="2"
 				>
