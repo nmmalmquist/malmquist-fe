@@ -1,6 +1,5 @@
 <script lang="ts">
 	import GyroLottie from '$lib/assets/lottie/gyro.json';
-	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { NavItemEnum } from '$lib/types/NavItem';
 	import type { RecentWork } from '$lib/types/RecentWork';
@@ -145,11 +144,11 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary text-dark w-full flex flex-col px-10 pt-10 md:px-[10%] xl:px-[17%] md:pt-24 -mt-1"
+		class="bg-secondary text-dark w-full flex flex-col pt-24 -mt-1"
 		data-scroll-section
 		data-scroll-section-id="section1"
 	>
-		<div class="flex flex-col md:flex-row gap-2 md:gap-32">
+		<div class="flex flex-col md:flex-row gap-2 md:gap-32 px-10 md:px-[10%] xl:px-[17%]">
 			<h2 class="text-3xl flex-[3] leading-[3.5rem]">
 				Solving software problems in the information systems era. A solution always exists. It's my
 				job to figure it out.
@@ -174,33 +173,38 @@
 				</div>
 			</div>
 		</div>
-		<h3>Recent Work</h3>
-		<ul>
-			{#each recentWorkItems as item}
-				<li><hr class="my-6 text-lightgray" /></li>
-				<li class="justify-between py-10 w-full grid grid-cols-1 md:grid-cols-2 px-10">
-					<div class="flex items-end">
-						<h4 class="text-8xl font-semibold">
-							{item.company}
-							{#if item.industry}
-								<span class="text-3xl italic">{item.industry}</span>
-							{/if}
-						</h4>
-					</div>
-					<div class="flex flex-col items-center justify-center font-semibold">
-						<span>{item.desription}</span>
-						<span class="flex items-center justify-center font-normal text-lg">
-							{#each item.tools as tool, i}
-								{#if i > 0}
-									{'  '}|{'  '}
+		<div class="px-8 sm:px-10 md:px-16 lg:px-36 mt-24 md:mt-0">
+			<h3>Recent Work</h3>
+			<ul>
+				{#each recentWorkItems as item}
+					<li><hr class="my-6 text-lightgray" /></li>
+					<li class=" py-10 w-full grid grid-cols-1 md:grid-cols-2 px-10">
+						<div class="flex flex-col items-center justify-center">
+							<h4 class="text-7xl sm:text-8xl font-semibold text-center">
+								{item.company}
+								{#if item.industry}
+									<span class="text-3xl italic hidden lg:inline">{item.industry}</span>
 								{/if}
-								{tool}
-							{/each}
-						</span>
-					</div>
-				</li>
-			{/each}
-		</ul>
+							</h4>
+							{#if item.industry}
+								<span class="text-3xl italic lg:hidden">{item.industry}</span>
+							{/if}
+						</div>
+						<div class="flex flex-col items-center justify-center font-semibold mt-4 md:mt-0">
+							<span class="text-center">{item.desription}</span>
+							<span class="flex items-center justify-center font-normal text-lg text-center">
+								{#each item.tools as tool, i}
+									{#if i > 0}
+										{'  '}|{'  '}
+									{/if}
+									{tool}
+								{/each}
+							</span>
+						</div>
+					</li>
+				{/each}
+			</ul>
+		</div>
 	</section>
 </main>
 
