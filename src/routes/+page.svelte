@@ -215,36 +215,34 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary text-dark w-full flex-col pt-24 -mt-1 hidden md:flex h-[200vh]"
+		class="bg-secondary text-dark flex-col pt-24 -mt-1 hidden md:flex h-[200vh] w-full items-center"
 		data-scroll-section
 		data-scroll-section-id="section2"
 	>
-		<div class=" w-full h-72 flex flex-col">
+		<div class=" py-8 items-center justify-center w-[120vw]">
 			<ul
-				class="flex gap-8 py-8 h-full w-full"
+				class="flex gap-8 w-full"
 				data-scroll
 				data-scroll-direction="horizontal"
-				data-scroll-position="top"
 				data-scroll-speed=".8"
 			>
-				<li class="bg-gray w-96 h-full flex-none"></li>
-				<li class="bg-gray w-96 h-full flex-none"></li>
-				<li class="bg-gray w-96 h-full flex-none"></li>
-				<li class="bg-gray w-96 h-full flex-none"></li>
+				<li class="bg-gray flex-1 h-64"></li>
+				<li class="bg-gray flex-1 h-64"></li>
+				<li class="bg-gray flex-1 h-64"></li>
+				<li class="bg-gray flex-1 h-64"></li>
 			</ul>
 		</div>
-		<div class=" w-full h-72 flex flex-col justify-center items-center">
+		<div class=" py-8 items-center justify-center w-[120vw]">
 			<ul
-				class="flex gap-8 py-8 h-full w-full"
+				class="flex gap-8 w-full"
 				data-scroll
 				data-scroll-direction="horizontal"
-				data-scroll-position="bottom"
 				data-scroll-speed="-.8"
 			>
-				<li class="bg-gray w-96 h-full flex-none"></li>
-				<li class="bg-gray w-96 h-full flex-none"></li>
-				<li class="bg-gray w-96 h-full flex-none"></li>
-				<li class="bg-gray w-96 h-full flex-none"></li>
+				<li class="bg-gray flex-1 h-64"></li>
+				<li class="bg-gray flex-1 h-64"></li>
+				<li class="bg-gray flex-1 h-64"></li>
+				<li class="bg-gray flex-1 h-64"></li>
 			</ul>
 		</div>
 	</section>
