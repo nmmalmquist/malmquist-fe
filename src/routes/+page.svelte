@@ -1,5 +1,5 @@
 <script lang="ts">
-	import GyroLottie from '$lib/assets/lottie/gyro.json';
+	import Nick from '$lib/assets/nick.png';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
@@ -86,17 +86,7 @@
 			data-scroll-speed="-4"
 			data-scroll-position="top"
 		>
-			{#if lottieImported}
-				<lottie-player
-					autoplay
-					loop
-					mode="normal"
-					src={GyroLottie}
-					class="w-full h-full rounded-full"
-				>
-				</lottie-player>
-			{/if}
-			<!-- <img src={Logo} class="h-[90%] object-cover" alt="background" /> -->
+			<img src={Nick} class="h-[90%] object-cover" alt="background" />
 		</div>
 		<div class="w-full flex flex-1"></div>
 		<div class="w-full flex flex-col-reverse md:flex-col flex-[2] pb-[15vh] z-10">
