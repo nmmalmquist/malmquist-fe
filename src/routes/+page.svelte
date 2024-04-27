@@ -1,4 +1,7 @@
 <script lang="ts">
+	import githubLogo from '$lib/assets/github-icon.png';
+	import instagramLogo from '$lib/assets/instagram-logo.webp';
+	import linkedInLogo from '$lib/assets/linkedin-icon.png';
 	import Nick from '$lib/assets/nick.png';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
@@ -205,7 +208,7 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary text-dark flex-col pt-24 -mt-1 hidden md:flex h-[200vh] w-full items-center"
+		class="bg-secondary text-dark flex-col pt-24 -mt-1 hidden md:flex w-full items-center"
 		data-scroll-section
 		data-scroll-section-id="section2"
 	>
@@ -236,6 +239,64 @@
 			</ul>
 		</div>
 	</section>
+	<footer
+		class="bg-dark text-secondary p-20 w-full"
+		data-scroll-section
+		data-scroll-section-id="footer"
+	>
+		<div class="flex flex-col md:flex-row gap-2 md:gap-32 px-10 md:px-[5%] xl:px-[12%]">
+			<h2 class="text-6xl flex-[3] self-center">Thank you for visiting my portfolio!</h2>
+			<div class="flex flex-1 md:flex-col items-center">
+				<div class="w-full h-full px-10 sm:px-8 md:px-6 lg:px-4">
+					<ul class="flex justify-between gap-10">
+						<a
+							href="https://www.linkedin.com/in/nick-malmquist/"
+							class="flex justify-center items-center h-full"
+						>
+							<img
+								src={linkedInLogo}
+								alt="LinkedIn"
+								class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44"
+							/>
+						</a>
+						<a
+							href="https://www.linkedin.com/in/nick-malmquist/"
+							class="flex justify-center items-center h-full"
+						>
+							<img
+								src={instagramLogo}
+								alt="Instagram"
+								class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44"
+							/>
+						</a>
+						<a
+							href="https://www.linkedin.com/in/nick-malmquist/"
+							class="flex justify-center items-center h-full"
+						>
+							<img
+								src={githubLogo}
+								alt="Github"
+								class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44 bg-white rounded-full"
+							/>
+						</a>
+					</ul>
+				</div>
+				<div
+					class="magnetic flex-1 md:flex-none flex justify-center md:mt-10"
+					data-scroll
+					data-scroll-speed="10"
+					data-scroll-direction="horizontal"
+					data-scroll-position="bottom"
+				>
+					<a
+						href="/about"
+						class="w-32 h-32 lg:w-44 lg:h-44 bg-primary rounded-full flex justify-center items-center text-white overflow-hidden relative"
+						><h3 class="magnetic-text z-10">Contact Me</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
 </main>
 
 <style>
