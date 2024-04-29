@@ -3,6 +3,7 @@
 	import instagramLogo from '$lib/assets/instagram-logo.webp';
 	import linkedInLogo from '$lib/assets/linkedin-icon.png';
 	import Nick from '$lib/assets/nick.png';
+	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { NavItemEnum } from '$lib/types/NavItem';
@@ -76,7 +77,7 @@
 	];
 </script>
 
-<!-- <LandingAnimation /> -->
+<LandingAnimation />
 <main data-scroll-container>
 	<section
 		class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
@@ -247,7 +248,7 @@
 		data-scroll-section
 		data-scroll-section-id="footer"
 	>
-		<div class="flex flex-col md:flex-row gap-2 md:gap-32 px-10 md:px-[5%] xl:px-[12%] gap-6">
+		<div class="flex flex-col md:flex-row md:gap-32 px-10 md:px-[5%] xl:px-[12%] gap-6">
 			<h2 class="text-6xl flex-[3] self-center text-center md:text-start">
 				Thank you for visiting my portfolio!
 			</h2>
