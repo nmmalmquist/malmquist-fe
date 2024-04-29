@@ -3,12 +3,12 @@
 	import instagramLogo from '$lib/assets/instagram-logo.webp';
 	import linkedInLogo from '$lib/assets/linkedin-icon.png';
 	import Nick from '$lib/assets/nick.png';
-	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { NavItemEnum } from '$lib/types/NavItem';
 	import type { RecentWork } from '$lib/types/RecentWork';
 	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
+	import { hydrated } from '$lib/utils/hydrated';
 	import { initMagnetAnimation } from '$lib/utils/magnetic';
 	import type { ScrollTrigger } from 'gsap/all';
 	import type LocomotiveScroll from 'locomotive-scroll';
@@ -32,6 +32,8 @@
 			scroll = mod.createScroller();
 			rollingTextTrigger = mod.createRollingTextScrollTrigger();
 			actionButtonTrigger = mod.createActionButtonScrollTrigger();
+			mod.initFadeTextAnimation();
+			mod.initPageEnterAnimation(scroll, $hydrated);
 			initMagnetAnimation();
 			initFillAnimationButton();
 		});
@@ -88,10 +90,10 @@
 			data-scroll-speed="-4"
 			data-scroll-position="top"
 		>
-			<img src={Nick} class="h-[90%] object-cover" alt="background" />
+			<img src={Nick} class="h-[90%] object-cover once-in" alt="background" />
 		</div>
 		<div class="w-full flex flex-1"></div>
-		<div class="w-full flex flex-col-reverse md:flex-col flex-[2] pb-[15vh] z-10">
+		<div class="w-full flex flex-col-reverse md:flex-col flex-[2] pb-[15vh] z-10 once-in">
 			<div class="w-full flex md:flex-1">
 				<div class="flex items-center justify-center md:justify-between w-full mb-7 md:m-0">
 					<div
@@ -144,27 +146,29 @@
 		data-scroll-section-id="section1"
 	>
 		<div class="flex flex-col md:flex-row gap-2 md:gap-32 px-10 md:px-[10%] xl:px-[17%]">
-			<h2 class="text-3xl flex-[3] leading-[3.5rem]">
+			<h2 class="text-3xl flex-[3] leading-[3.5rem] animate-text-enter">
 				Solving software problems in the information systems era. A solution always exists. It's my
 				job to figure it out.
 			</h2>
 			<div class="flex flex-1 md:flex-col items-center">
-				<h3 class="text-lg leading-[2rem] flex-1">
+				<h3 class="text-lg leading-[2rem] flex-1 animate-text-enter">
 					The uncanny passion for code and creating tangible solutions drives my success
 				</h3>
 				<div
-					class="magnetic flex-1 md:flex-none flex justify-center md:mt-10"
+					class=" flex-1 md:flex-none flex justify-center md:mt-10"
 					data-scroll
 					data-scroll-speed="2"
 				>
-					<a
-						href="/about"
-						class="w-32 h-32 lg:w-44 lg:h-44 bg-dark btn rounded-full flex justify-center items-center text-white overflow-hidden relative"
-						><h3 class="magnetic-text z-10">About Me</h3>
-						<div
-							class="pointer-events-none w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary"
-						></div></a
-					>
+					<div class="magnetic">
+						<a
+							href="/about"
+							class="w-32 h-32 lg:w-44 lg:h-44 bg-dark btn rounded-full flex justify-center items-center text-white overflow-hidden relative"
+							><h3 class="magnetic-text z-10">About Me</h3>
+							<div
+								class="pointer-events-none w-[150%] h-[200%] absolute animate-button-fill will-change-transform top-[-200%] rounded-full bg-primary"
+							></div></a
+						>
+					</div>
 				</div>
 			</div>
 		</div>

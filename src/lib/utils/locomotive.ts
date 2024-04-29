@@ -48,8 +48,10 @@ export const createScroller = () => {
 		scroller: document.querySelector('[data-scroll-container]')
 	});
 	// each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll.
+	// POTENTIALLY NOT NEEDED!
 	ScrollTrigger.addEventListener('refresh', () => {
 		locomotiveScroll.update();
+		// ScrollTrigger.refresh();
 	});
 
 	// after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
@@ -135,3 +137,49 @@ function roll(targets: string, vars: { duration: number; ease?: string }, revers
 
 	return tl;
 }
+
+// Scrolltrigger Animation : Span Lines Intro Home
+export const initFadeTextAnimation = () => {
+	const animateTextElements = document.querySelectorAll('.animate-text-enter');
+	if (animateTextElements) {
+		animateTextElements.forEach(function (element) {
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: element,
+					toggleActions: 'play none none reset',
+					start: '0% 110%',
+					end: '100% 0%'
+				}
+			});
+			tl.from(element, {
+				y: '2em',
+				opacity: 0,
+				ease: 'expo.out',
+				duration: 1.75,
+				delay: 0
+			});
+		});
+	}
+};
+
+export const initPageEnterAnimation = (scroll: LocomotiveScroll, isHydrated: boolean) => {
+	// Animation - Page transition Out
+	const tl = gsap.timeline();
+
+	tl.set('main .once-in', {
+		y: '50vh'
+	});
+
+	tl.call(function () {
+		scroll.start();
+	});
+
+	tl.to('main .once-in', {
+		duration: 2,
+		y: '0vh',
+		stagger: 0.05,
+		ease: 'Expo.easeOut',
+		delay: isHydrated ? 1.5 : 2,
+		clearProps: 'true'
+	});
+};
