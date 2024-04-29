@@ -26,7 +26,6 @@
 			lottieImported = true;
 		});
 		import('$lib/utils/locomotive').then((mod) => {
-			mod.createRollingTextScrollTrigger();
 			if (scroll) {
 				scroll.destroy();
 			}
@@ -75,7 +74,7 @@
 	];
 </script>
 
-<LandingAnimation />
+<!-- <LandingAnimation /> -->
 <main data-scroll-container>
 	<section
 		class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
@@ -240,15 +239,17 @@
 		</div>
 	</section>
 	<footer
-		class="bg-dark text-secondary p-20 w-full"
+		class="bg-dark text-secondary py-20 px-8 md:px-12 w-full"
 		data-scroll-section
 		data-scroll-section-id="footer"
 	>
-		<div class="flex flex-col md:flex-row gap-2 md:gap-32 px-10 md:px-[5%] xl:px-[12%]">
-			<h2 class="text-6xl flex-[3] self-center">Thank you for visiting my portfolio!</h2>
-			<div class="flex flex-1 md:flex-col items-center">
+		<div class="flex flex-col md:flex-row gap-2 md:gap-32 px-10 md:px-[5%] xl:px-[12%] gap-6">
+			<h2 class="text-6xl flex-[3] self-center text-center md:text-start">
+				Thank you for visiting my portfolio!
+			</h2>
+			<div class="flex flex-1 flex-col items-center justify-center gap-6">
 				<div class="w-full h-full px-10 sm:px-8 md:px-6 lg:px-4">
-					<ul class="flex justify-between gap-10">
+					<ul class="flex justify-between gap-6 sm:gap-10">
 						<a
 							href="https://www.linkedin.com/in/nick-malmquist/"
 							class="flex justify-center items-center h-full"
@@ -282,7 +283,7 @@
 					</ul>
 				</div>
 				<div
-					class="magnetic flex-1 md:flex-none flex justify-center md:mt-10"
+					class="magnetic flex-1 md:flex-none justify-center md:mt-10 hidden sm:flex"
 					data-scroll
 					data-scroll-speed="10"
 					data-scroll-direction="horizontal"

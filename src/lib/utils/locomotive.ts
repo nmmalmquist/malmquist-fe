@@ -4,6 +4,12 @@ import { ScrollTrigger } from 'gsap/all';
 import LocomotiveScroll from 'locomotive-scroll';
 
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({
+	//remove refreshing on window resize
+	// default is "resize,visibilitychange,DOMContentLoaded,load" so we can remove "resize" from the list:
+	autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load'
+});
+
 export const createScroller = () => {
 	ScrollTrigger.clearMatchMedia('[data-scroll-container]');
 	ScrollTrigger.killAll();
@@ -54,12 +60,13 @@ export const createScroller = () => {
 export const createActionButtonScrollTrigger = () => {
 	return ScrollTrigger.create({
 		trigger: 'nav',
-		start: '-100% top', // add class when the the 10% margin passes through top of screen
+		start: 'bottom top', // add class when the the 10% margin passes through top of screen
+		end: '+=9999999999',
 		onToggle: (self) => {
 			if (self.isActive) {
-				navInView.update(() => true);
-			} else {
 				navInView.update(() => false);
+			} else {
+				navInView.update(() => true);
 			}
 		}
 	});
