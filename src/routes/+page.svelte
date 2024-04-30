@@ -5,6 +5,22 @@
 	import Nick from '$lib/assets/nick.png';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import AWSIcon from '$lib/components/tech-icons/AWSIcon.svelte';
+	import DockerIcon from '$lib/components/tech-icons/DockerIcon.svelte';
+	import DotnetIcon from '$lib/components/tech-icons/DotnetIcon.svelte';
+	import JQueryIcon from '$lib/components/tech-icons/JQueryIcon.svelte';
+	import JavaIcon from '$lib/components/tech-icons/JavaIcon.svelte';
+	import MongoIcon from '$lib/components/tech-icons/MongoIcon.svelte';
+	import MySqlIcon from '$lib/components/tech-icons/MySqlIcon.svelte';
+	import NextJsIcon from '$lib/components/tech-icons/NextJsIcon.svelte';
+	import PostmanIcon from '$lib/components/tech-icons/PostmanIcon.svelte';
+	import PythonIcon from '$lib/components/tech-icons/PythonIcon.svelte';
+	import ReactIcon from '$lib/components/tech-icons/ReactIcon.svelte';
+	import TailwindIcon from '$lib/components/tech-icons/TailwindIcon.svelte';
+	import TypescriptIcon from '$lib/components/tech-icons/TypescriptIcon.svelte';
+	import UbuntuIcon from '$lib/components/tech-icons/UbuntuIcon.svelte';
+	import VueIcon from '$lib/components/tech-icons/VueIcon.svelte';
+	import K8sIcon from '$lib/components/tech-icons/k8sIcon.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { NavItemEnum } from '$lib/types/NavItem';
 	import type { RecentWork } from '$lib/types/RecentWork';
@@ -212,7 +228,7 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary text-dark flex-col pt-24 -mt-1 hidden md:flex w-full items-center"
+		class="bg-secondary text-dark flex-col py-24 -mt-1 hidden md:flex w-full items-center"
 		data-scroll-section
 		data-scroll-section-id="section2"
 	>
@@ -223,10 +239,33 @@
 				data-scroll-direction="horizontal"
 				data-scroll-speed=".8"
 			>
-				<li class="bg-gray flex-1 h-64"></li>
-				<li class="bg-gray flex-1 h-64"></li>
-				<li class="bg-gray flex-1 h-64"></li>
-				<li class="bg-gray flex-1 h-64"></li>
+				<li class=" flex-1 flex justify-center">
+					<ReactIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<PythonIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<AWSIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<DockerIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<DotnetIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<MySqlIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<VueIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<TailwindIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<MongoIcon />
+				</li>
 			</ul>
 		</div>
 		<div class=" py-8 items-center justify-center w-[120vw]">
@@ -236,10 +275,27 @@
 				data-scroll-direction="horizontal"
 				data-scroll-speed="-.8"
 			>
-				<li class="bg-gray flex-1 h-64"></li>
-				<li class="bg-gray flex-1 h-64"></li>
-				<li class="bg-gray flex-1 h-64"></li>
-				<li class="bg-gray flex-1 h-64"></li>
+				<li class=" flex-1 flex justify-center">
+					<TypescriptIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<K8sIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<NextJsIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<JQueryIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<JavaIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<UbuntuIcon />
+				</li>
+				<li class=" flex-1 flex justify-center">
+					<PostmanIcon />
+				</li>
 			</ul>
 		</div>
 	</section>
