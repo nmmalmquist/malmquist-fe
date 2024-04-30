@@ -1,57 +1,21 @@
 <script>
-	import githubLogo from '$lib/assets/github-icon.png';
-	import instagramLogo from '$lib/assets/instagram-logo.webp';
-	import linkedInLogo from '$lib/assets/linkedin-icon.png';
 </script>
 
 <footer
-	class="bg-dark text-secondary py-20 px-8 md:px-12 w-full"
+	class="bg-dark text-secondary py-20 px-10 md:px-[10%] xl:px-[20%] w-full h-screen overflow-hidden"
 	data-scroll-section
 	data-scroll-section-id="footer"
 >
-	<div class="flex flex-col md:flex-row md:gap-32 px-10 md:px-[5%] xl:px-[12%] gap-6">
-		<h2 class="text-6xl flex-[3] self-center text-center md:text-start">
-			Thank you for visiting my portfolio!
-		</h2>
-		<div class="flex flex-1 flex-col items-center justify-center gap-6">
-			<div class="w-full h-full px-10 sm:px-8 md:px-6 lg:px-4">
-				<ul class="flex justify-between gap-6 sm:gap-10">
-					<a
-						href="https://www.linkedin.com/in/nick-malmquist/"
-						class="flex justify-center items-center h-full"
-					>
-						<img
-							src={linkedInLogo}
-							alt="LinkedIn"
-							class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44"
-						/>
-					</a>
-					<a
-						href="https://www.linkedin.com/in/nick-malmquist/"
-						class="flex justify-center items-center h-full"
-					>
-						<img
-							src={instagramLogo}
-							alt="Instagram"
-							class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44"
-						/>
-					</a>
-					<a
-						href="https://www.linkedin.com/in/nick-malmquist/"
-						class="flex justify-center items-center h-full"
-					>
-						<img
-							src={githubLogo}
-							alt="Github"
-							class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44 bg-white rounded-full"
-						/>
-					</a>
-				</ul>
-			</div>
+	<div data-scroll data-scroll-speed="-4" class="flex flex-col gap-24">
+		<div class="flex flex-col md:flex-row md:gap-32 gap-6">
+			<h2 class="text-8xl flex-[3] self-center text-center md:text-start">Let's Work Together!</h2>
+		</div>
+		<div class="relative w-full flex justify-end items-center">
+			<hr class="bg-gray w-full absolute" />
 			<div
-				class="flex-1 md:flex-none justify-center md:mt-10 hidden sm:flex"
+				class="justify-center hidden sm:flex"
 				data-scroll
-				data-scroll-speed="10"
+				data-scroll-speed="-12"
 				data-scroll-direction="horizontal"
 				data-scroll-position="bottom"
 			>
@@ -62,6 +26,28 @@
 						><h3 class="magnetic-text z-10">Contact Me</h3>
 					</a>
 				</div>
+			</div>
+		</div>
+		<div
+			class="flex gap-10 flex-col md:flex-row justify-center md:justify-between items-center flex-wrap"
+		>
+			<div class="flex gap-10 flex-col md:flex-row">
+				<div class="text-xl border-gray border-2 py-6 px-10 rounded-full flex-shrink-0">
+					+1 (270) 779-1464
+				</div>
+				<div class="text-xl border-gray border-2 py-6 px-10 rounded-full flex-shrink-0">
+					nicholasmmalmquist@gmail.com
+				</div>
+			</div>
+
+			<div class=" flex flex-row gap-6 m-10">
+				<a href="www.github.com" class="hover:text-primary transition-all duration-500">Github</a>
+				<a href="www.instagram.com" class="hover:text-primary transition-all duration-500"
+					>Instagram</a
+				>
+				<a href="www.linkedin.com" class="hover:text-primary transition-all duration-500"
+					>LinkedIn</a
+				>
 			</div>
 		</div>
 	</div>
