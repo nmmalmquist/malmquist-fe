@@ -165,21 +165,32 @@ export const initFadeTextAnimation = () => {
 export const initPageEnterAnimation = (scroll: LocomotiveScroll, isHydrated: boolean) => {
 	// Animation - Page transition Out
 	const tl = gsap.timeline();
+	const tl2 = gsap.timeline();
 
-	tl.set('main .once-in', {
+	tl.call(function () {
+		scroll.stop();
+	});
+
+	tl2.set('main .once-in', {
 		y: '50vh'
 	});
 
+	tl.to('.nick', {
+		duration: 2,
+		y: '-130%',
+		ease: 'Expo.easeOut',
+		delay: isHydrated ? 1.5 : 2,
+		clearProps: 'true'
+	});
 	tl.call(function () {
 		scroll.start();
 	});
 
-	tl.to('main .once-in', {
+	tl2.to('main .once-in', {
 		duration: 2,
 		y: '0vh',
-		stagger: 0.05,
 		ease: 'Expo.easeOut',
-		delay: isHydrated ? 1.5 : 2,
+		delay: isHydrated ? 1.3 : 1.8,
 		clearProps: 'true'
 	});
 };

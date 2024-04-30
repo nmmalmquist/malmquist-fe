@@ -14,8 +14,7 @@
 
 <div
 	class={twMerge(
-		'bg-dark fixed top-0 left-0 w-full h-screen z-30 flex justify-center items-center text-white',
-		determineLoadingAnimation()
+		'bg-dark fixed top-0 left-0 w-full h-screen z-30 flex justify-center items-center text-white nick'
 	)}
 >
 	<span
@@ -125,9 +124,6 @@
 	}
 	.landing-animation-intro {
 		animation: slide-up 3s forwards;
-	}
-	.landing-animation-navigate-up-from-down {
-		animation: slide-up-from-down 2s forwards ease-in-out;
 	}
 	.landing-animation-navigate-up {
 		animation: slide-up 2s forwards;
