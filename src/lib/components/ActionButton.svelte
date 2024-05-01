@@ -6,7 +6,7 @@
 
 <div
 	class={twMerge(
-		' h-16 w-16 action-btn magnetic bg-dark rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 z-40 transition-[scale] native-scale-0',
+		' h-16 w-16 action-btn magnetic bg-dark rounded-full fixed top-4 right-4 sm:top-8 sm:right-8 z-40 transition-[scale] native-scale-0 border-[1px] border-lightgray',
 		(!$navInView || $mobileDrawerOpen) && 'native-scale-100'
 	)}
 >

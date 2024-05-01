@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <footer
 	class="bg-dark text-secondary py-20 px-4 md:px-[10%] xl:px-[20%] w-full h-screen overflow-hidden"
 	data-scroll-section
