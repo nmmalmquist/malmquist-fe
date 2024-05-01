@@ -34,13 +34,14 @@ export const initFillAnimationButton = () => {
 		const element = event.currentTarget as HTMLElement;
 		innerFillForButtonTranslationOUT(element);
 	});
-	document.querySelector('.btn')?.addEventListener('mouseenter', function (event) {
-		const element = event.currentTarget as HTMLElement;
-		innerFillForButtonTranslationIN(element);
-	});
-
-	document.querySelector('.btn')?.addEventListener('mouseleave', function (event) {
-		const element = event.currentTarget as HTMLElement;
-		innerFillForButtonTranslationOUT(element);
+	document.querySelectorAll('.btn').forEach((el) => {
+		el.addEventListener('mouseenter', function (event) {
+			const element = event.currentTarget as HTMLElement;
+			innerFillForButtonTranslationIN(element);
+		});
+		el.addEventListener('mouseleave', function (event) {
+			const element = event.currentTarget as HTMLElement;
+			innerFillForButtonTranslationOUT(element);
+		});
 	});
 };

@@ -6,10 +6,6 @@ export const navItems: NavItem[] = [
 		url: '/work'
 	},
 	{
-		title: NavItemEnum.PHOTOS,
-		url: '/photos'
-	},
-	{
 		title: NavItemEnum.ABOUT,
 		url: '/about'
 	},

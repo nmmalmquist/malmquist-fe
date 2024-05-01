@@ -35,7 +35,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@lottiefiles/lottie-player": "^2.0.4",
 		"@types/dom-view-transitions": "^1.0.4",
 		"gsap": "^3.12.5",
 		"locomotive-scroll": "^4.1.4",

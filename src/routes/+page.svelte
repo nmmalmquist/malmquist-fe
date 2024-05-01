@@ -31,15 +31,11 @@
 
 	activeLink.update(() => NavItemEnum.HOME);
 
-	let lottieImported = false;
 	onMount(() => {
 		let scroll: LocomotiveScroll;
 		let rollingTextTrigger: ScrollTrigger;
 		let actionButtonTrigger: ScrollTrigger;
 
-		import('@lottiefiles/lottie-player').then(() => {
-			lottieImported = true;
-		});
 		import('$lib/utils/locomotive').then((mod) => {
 			if (scroll) {
 				scroll.destroy();
