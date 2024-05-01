@@ -33,31 +33,28 @@
 
 	onMount(() => {
 		let scroll: LocomotiveScroll;
-		let rollingTextTrigger: ScrollTrigger;
-		let actionButtonTrigger: ScrollTrigger;
+		let itemsToKill: (ScrollTrigger | gsap.core.Timeline | gsap.core.Tween)[] = [];
 
 		import('$lib/utils/locomotive').then((mod) => {
 			if (scroll) {
 				scroll.destroy();
 			}
 			scroll = mod.createScroller();
-			rollingTextTrigger = mod.createRollingTextScrollTrigger();
-			actionButtonTrigger = mod.createActionButtonScrollTrigger();
-			mod.initFadeTextAnimation();
-			mod.initPageEnterAnimation(scroll, $hydrated);
-			initMagnetAnimation();
-			initFillAnimationButton();
+			itemsToKill.push(
+				mod.createRollingTextScrollTrigger(),
+				mod.createActionButtonScrollTrigger(),
+				...mod.initFadeTextAnimation(),
+				...mod.initPageEnterAnimation(scroll, $hydrated),
+				...initMagnetAnimation(),
+				...initFillAnimationButton()
+			);
 		});
 		return () => {
 			if (scroll) {
+				console.log('here');
 				scroll.destroy();
 			}
-			if (rollingTextTrigger) {
-				rollingTextTrigger.kill();
-			}
-			if (actionButtonTrigger) {
-				actionButtonTrigger.kill();
-			}
+			itemsToKill.forEach((item) => item.kill());
 		};
 	});
 

@@ -140,6 +140,7 @@ function roll(targets: string, vars: { duration: number; ease?: string }, revers
 
 // Scrolltrigger Animation : Span Lines Intro Home
 export const initFadeTextAnimation = () => {
+	const timelines: gsap.core.Timeline[] = [];
 	const animateTextElements = document.querySelectorAll('.animate-text-enter');
 	if (animateTextElements) {
 		animateTextElements.forEach(function (element) {
@@ -158,8 +159,10 @@ export const initFadeTextAnimation = () => {
 				duration: 1.75,
 				delay: 0
 			});
+			timelines.push(tl);
 		});
 	}
+	return timelines;
 };
 
 export const initPageEnterAnimation = (scroll: LocomotiveScroll, isHydrated: boolean) => {
@@ -193,4 +196,5 @@ export const initPageEnterAnimation = (scroll: LocomotiveScroll, isHydrated: boo
 		delay: isHydrated ? 1.3 : 1.8,
 		clearProps: 'true'
 	});
+	return [tl, tl2];
 };
