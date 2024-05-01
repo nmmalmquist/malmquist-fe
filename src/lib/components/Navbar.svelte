@@ -6,7 +6,7 @@
 	import { twMerge } from 'tailwind-merge';
 </script>
 
-<nav class="w-full absolute text-white font-semibold z-20">
+<nav class="w-full absolute text-dark font-semibold z-20">
 	<div class="relative">
 		<div class="flex flex-row justify-between p-4 sm:p-8">
 			<div class="p-4">
@@ -60,7 +60,7 @@
 		width: 0.5rem;
 		height: 0.5rem;
 		border-radius: 50%;
-		background-color: theme(colors.secondary);
+		background-color: theme(colors.dark);
 	}
 	.selected::after {
 		content: '';
@@ -70,7 +70,7 @@
 		bottom: 0;
 		height: 0.5rem;
 		width: 0.5rem;
-		background-color: theme(colors.secondary);
+		background-color: theme(colors.dark);
 		border-radius: 50%;
 	}
 </style>

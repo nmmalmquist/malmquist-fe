@@ -6,10 +6,8 @@
 	data-scroll-section
 	data-scroll-section-id="footer"
 >
-	<div data-scroll data-scroll-speed="-4" class="flex flex-col gap-24">
-		<h2 class="text-6xl sm:text-8xl flex-[3] self-center text-center md:text-start">
-			Let's Work Together!
-		</h2>
+	<div data-scroll data-scroll-speed="-2" class="flex flex-col gap-24">
+		<h2 class="text-6xl sm:text-8xl self-center text-center md:text-start">Let's Work Together!</h2>
 
 		<div class="relative w-full flex justify-end items-center">
 			<hr class="bg-gray w-full absolute" />

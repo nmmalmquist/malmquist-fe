@@ -94,7 +94,7 @@
 <LandingAnimation />
 <main data-scroll-container>
 	<section
-		class="bg-gray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
+		class="bg-lightgray w-screen flex flex-col h-[110vh] justify-stretch items-stretch relative overflow-hidden"
 		data-scroll-section
 		data-scroll-section-id="section0"
 	>
@@ -119,14 +119,14 @@
 					<div
 						class="mx-4 sm:mx-10 flex justify-center md:justify-between items-center w-full md:w-auto gap-4 p-3"
 					>
-						<div class="flex justify-center items-center gap-2 text-white">
+						<div class="flex justify-center items-center gap-2 text-dark">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke-width={1.5}
 								stroke="currentColor"
-								class="w-10 h-10flex-shrink-0"
+								class="w-10 h-10 flex-shrink-0"
 							>
 								<path
 									stroke-linecap="round"
@@ -149,7 +149,7 @@
 			>
 				<div class="wrapperRollingText whitespace-nowrap relative">
 					<div class="rollingText inline-block">
-						<h1 class=" whitespace-nowrap text-white title-name">Nick Malmquist—</h1>
+						<h1 class=" whitespace-nowrap text-dark title-name">Nick Malmquist—</h1>
 					</div>
 				</div>
 			</div>
