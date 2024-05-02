@@ -165,14 +165,10 @@ export const initFadeTextAnimation = () => {
 	return timelines;
 };
 
-export const initPageEnterAnimation = (scroll: LocomotiveScroll, isHydrated: boolean) => {
+export const initPageEnterAnimation = (isHydrated: boolean) => {
 	// Animation - Page transition Out
 	const tl = gsap.timeline();
 	const tl2 = gsap.timeline();
-
-	tl.call(function () {
-		scroll.stop();
-	});
 
 	tl2.set('main .once-in', {
 		y: '50vh'
@@ -184,9 +180,6 @@ export const initPageEnterAnimation = (scroll: LocomotiveScroll, isHydrated: boo
 		ease: 'Expo.easeOut',
 		delay: isHydrated ? 1.5 : 2,
 		clearProps: 'true'
-	});
-	tl.call(function () {
-		scroll.start();
 	});
 
 	tl2.to('main .once-in', {

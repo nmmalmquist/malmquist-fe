@@ -3,22 +3,20 @@
 @tailwind utilities;
 
 @layer utilities {
-	@variants responsive {
-		/* Chrome, Safari and Opera */
-		.no-scrollbar::-webkit-scrollbar {
-			display: none;
-		}
+	/* Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
 
-		.no-scrollbar {
-			-ms-overflow-style: none; /* IE and Edge */
-			scrollbar-width: none; /* Firefox */
-		}
-		.native-scale-0 {
-			scale: 0;
-		}
-		.native-scale-100 {
-			scale: 100%;
-		}
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+	.native-scale-0 {
+		scale: 0;
+	}
+	.native-scale-100 {
+		scale: 100%;
 	}
 }
 

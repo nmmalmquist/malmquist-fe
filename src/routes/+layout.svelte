@@ -4,6 +4,7 @@
 	import ActionButton from '$lib/components/ActionButton.svelte';
 	import NavDrawer from '$lib/components/NavDrawer.svelte';
 	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
+	import { setSmoothScroller } from '$lib/stores/smoothScroller';
 	import { hydrated } from '$lib/utils/hydrated.js';
 	import { onMount } from 'svelte';
 	import { twMerge } from 'tailwind-merge';
@@ -24,6 +25,10 @@
 	onMount(() => {
 		// Enables locomotive util for parallax scrolling effects
 		hydrated.setHydrated(); // To know if intro should be spun through
+		import('$lib/utils/locomotive').then((mod) => {
+			const smoothScroller = mod.createScroller();
+			setSmoothScroller(smoothScroller);
+		});
 	});
 </script>
 

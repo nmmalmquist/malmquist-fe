@@ -20,39 +20,33 @@
 	import VueIcon from '$lib/components/tech-icons/VueIcon.svelte';
 	import K8sIcon from '$lib/components/tech-icons/k8sIcon.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
+	import { setSmoothScroller } from '$lib/stores/smoothScroller';
 	import { NavItemEnum } from '$lib/types/NavItem';
 	import type { RecentWork } from '$lib/types/RecentWork';
 	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
 	import { hydrated } from '$lib/utils/hydrated';
 	import { initMagnetAnimation } from '$lib/utils/magnetic';
 	import type { ScrollTrigger } from 'gsap/all';
-	import type LocomotiveScroll from 'locomotive-scroll';
 	import { onMount } from 'svelte';
+
 	activeLink.update(() => NavItemEnum.ABOUT);
 
 	onMount(() => {
-		let scroll: LocomotiveScroll;
 		let itemsToKill: (ScrollTrigger | gsap.core.Timeline | gsap.core.Tween)[] = [];
 
 		import('$lib/utils/locomotive').then((mod) => {
-			if (scroll) {
-				scroll.destroy();
-			}
-			scroll = mod.createScroller();
+			setSmoothScroller(mod.createScroller());
 			itemsToKill.push(
 				mod.createRollingTextScrollTrigger(),
 				mod.createActionButtonScrollTrigger(),
 				...mod.initFadeTextAnimation(),
-				...mod.initPageEnterAnimation(scroll, $hydrated),
+				...mod.initPageEnterAnimation($hydrated),
 				...initMagnetAnimation(),
 				...initFillAnimationButton()
 			);
 		});
+
 		return () => {
-			if (scroll) {
-				console.log('here2');
-				scroll.destroy();
-			}
 			itemsToKill.forEach((item) => item.kill());
 		};
 	});
