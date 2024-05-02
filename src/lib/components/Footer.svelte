@@ -22,7 +22,7 @@
 			<div
 				class="justify-center hidden sm:flex"
 				data-scroll
-				data-scroll-speed="-12"
+				data-scroll-speed="12"
 				data-scroll-direction="horizontal"
 				data-scroll-position="bottom"
 			>

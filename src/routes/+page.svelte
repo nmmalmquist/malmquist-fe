@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Nick from '$lib/assets/nick.png';
+	import Nick from '$lib/assets/nick-main.png';
 	import Footer from '$lib/components/Footer.svelte';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
