@@ -74,9 +74,11 @@
 					)}
 				>
 					<div class={twMerge('w-8 h-8 rotate-45 bg-white absolute -right-1')}></div>
-					<div class="z-10">{timelineData[0].events[0].title}</div>
+					<div class="z-10">
+						{timelineData[0].events[0].title}
+					</div>
 					{#if timelineData[0].events[0].isActive}
-						<p class="font-normal">
+						<p class="font-normal text-base">
 							{timelineData[0].events[0].description}
 						</p>
 					{/if}

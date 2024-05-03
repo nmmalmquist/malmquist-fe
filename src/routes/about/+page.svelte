@@ -163,7 +163,7 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary w-full px-8 md:px-24 lg:px-36 xl:px-48 md:grid md:grid-cols-3 gap-6 -mt-1 h-screen once-in flex flex-col"
+		class="bg-secondary w-full px-8 md:px-24 lg:px-36 xl:px-48 md:grid md:grid-cols-3 gap-6 -mt-1 once-in flex flex-col"
 		data-scroll-section
 		data-scroll-section-id="section1"
 	>
@@ -175,13 +175,13 @@
 				the solution.
 			</h3>
 		</div>
-		<div class="w-full md:overflow-hidden relative col-span-1 md:col-span-2">
+		<div class="w-full md:overflow-hidden col-span-1 md:col-span-2">
 			<img
 				data-scroll
 				data-scroll-speed="-2"
 				src={NickPic}
 				alt="Nick"
-				class="w-full absolute object-cover"
+				class="w-full object-cover"
 			/>
 		</div>
 	</section>
