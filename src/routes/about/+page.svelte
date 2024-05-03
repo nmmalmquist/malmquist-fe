@@ -7,6 +7,7 @@
 	import NickPic from '$lib/assets/nick-about-you.jpg';
 	import Footer from '$lib/components/Footer.svelte';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
+	import MobileTimeline from '$lib/components/MobileTimeline.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
 	import CodeIcon from '$lib/components/tech-icons/CodeIcon.svelte';
@@ -43,14 +44,26 @@
 	});
 
 	let timelineData: TimelineData = [
-		{ title: 'Now', colorClass: 'bg-primary' },
+		{
+			title: 'Now',
+			colorClass: 'bg-primary',
+			events: [
+				{
+					title: 'Presently',
+					date: new Date('12/1/2024'),
+					isActive: true,
+					description:
+						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+				}
+			]
+		},
 		{ title: '2024', colorClass: 'bg-primary' },
 		{
 			title: '2023',
 			colorClass: 'bg-primary',
 			events: [
 				{
-					percentOfYear: 0.8,
+					date: new Date('09/15/2023'),
 					title: 'Obtained AWS Developer Associate Certification',
 					isActive: false,
 					src: AWSLogo,
@@ -58,7 +71,7 @@
 						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
 				},
 				{
-					percentOfYear: 0.5,
+					date: new Date('06/06/2023'),
 					title: 'Started at CGI, Inc.',
 					isActive: false,
 					src: CGILogo,
@@ -66,7 +79,7 @@
 						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
 				},
 				{
-					percentOfYear: 0.3,
+					date: new Date('05/15/2023'),
 					title: 'Graduated from The University of Alabama',
 					src: UALogo,
 					isActive: false,
@@ -80,7 +93,7 @@
 			colorClass: 'bg-violet',
 			events: [
 				{
-					percentOfYear: 0.9,
+					date: new Date('12/15/2022'),
 					title: 'Obtained CompTIA Secuirty+ Certification',
 					isActive: false,
 					src: SecurityPlusLogo,
@@ -94,7 +107,7 @@
 			colorClass: 'bg-gold',
 			events: [
 				{
-					percentOfYear: 0.5,
+					date: new Date('02/15/2021'),
 					title: 'Started MBUSI Co-op (RPA Development)',
 					isActive: false,
 					src: MBUSILogo,
@@ -108,7 +121,7 @@
 			colorClass: 'bg-red',
 			events: [
 				{
-					percentOfYear: 0.5,
+					date: new Date('09/15/2020'),
 					title: 'Started MBUSI Co-op (Product Cost Engineer)',
 					isActive: false,
 					src: MBUSILogo,
@@ -197,11 +210,16 @@
 		</p>
 	</section>
 	<section
-		class="bg-secondary w-screen px-8 md:px-24 lg:px-36 xl:px-48 -mt-1 pb-32"
+		class="bg-secondary w-screen px-8 -mt-1 pb-32"
 		data-scroll-section
 		data-scroll-section-id="section3"
 	>
-		<Timeline bind:timelineData />
+		<div class="hidden xl:block">
+			<Timeline bind:timelineData />
+		</div>
+		<div class="xl:hidden">
+			<MobileTimeline bind:timelineData />
+		</div>
 	</section>
 	<Footer />
 </main>
