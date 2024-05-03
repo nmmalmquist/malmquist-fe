@@ -3,6 +3,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import Timeline from '$lib/components/Timeline.svelte';
 	import CodeIcon from '$lib/components/tech-icons/CodeIcon.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { setSmoothScroller } from '$lib/stores/smoothScroller';
@@ -89,11 +90,47 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary w-screen px-8 md:px-24 lg:px-36 xl:px-48 py-32 -mt-1 h-screen"
+		class="bg-secondary w-screen px-8 md:px-24 lg:px-36 xl:px-48 py-32 -mt-1 flex flex-col gap-10"
 		data-scroll-section
 		data-scroll-section-id="section2"
 	>
 		<h3 class="text-5xl text-dark">About Mr. Malmquist...</h3>
+		<p class="leading-8">
+			Welcome to my personal portfolio! I'm Nick Malmquist, a proud alum of the University of
+			Alabama, where I earned both my undergraduate and master's degrees in Management Information
+			Systems - Roll Tide! Over the years, I've had the privilege of contributing to three major
+			enterprise projects spanning <em class="text-dark-primary font-bold not-italic"
+				>serverless cloud</em
+			>, on-premises, and hybrid infrastructures. Coding isn't just a job for me; it's an obsession.
+			As a <em class="text-dark-primary font-bold not-italic">full-stack engineer</em>, I thrive on
+			challenges at every level of the stack, armed with a robust tech stack to match. When I'm not
+			knee-deep in code, I'm out on the water, indulging in my love for water skiing and lake
+			activities. Beyond coding and water sports, I'm deeply invested in
+			<em class="text-dark-primary font-bold not-italic">DevOps</em>, particularly in areas like
+			CI/CD pipelines, containerization, orchestration, and networking. My journey is one of
+			continuous
+			<em class="text-dark-primary font-bold not-italic">learning and growth</em>, and I'm excited
+			to showcase it here on my portfolio.
+		</p>
+	</section>
+	<section
+		class="bg-secondary w-screen px-8 md:px-24 lg:px-36 xl:px-48 py-32 -mt-1 h-screen"
+		data-scroll-section
+		data-scroll-section-id="section3"
+	>
+		<Timeline
+			timelineData={[
+				{ title: 'Now' },
+				{
+					title: '2023',
+					events: [
+						{ percentOfYear: 0.3, description: 'Test event1' },
+						{ percentOfYear: 0.6, description: 'Test event2' },
+						{ percentOfYear: 0.8, description: 'Test event3' }
+					]
+				}
+			]}
+		/>
 	</section>
 	<Footer />
 </main>
