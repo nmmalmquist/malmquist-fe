@@ -25,10 +25,6 @@
 	onMount(() => {
 		// Enables locomotive util for parallax scrolling effects
 		hydrated.setHydrated(); // To know if intro should be spun through
-		import('$lib/utils/locomotive').then((mod) => {
-			const smoothScroller = mod.createScroller();
-			setSmoothScroller(smoothScroller);
-		});
 	});
 </script>
 

@@ -35,12 +35,13 @@
 		let itemsToKill: (ScrollTrigger | gsap.core.Timeline | gsap.core.Tween)[] = [];
 
 		import('$lib/utils/locomotive').then((mod) => {
-			setSmoothScroller(mod.createScroller());
+			const smoothScroller = mod.createScroller();
+			setSmoothScroller(smoothScroller);
 			itemsToKill.push(
 				mod.createRollingTextScrollTrigger(),
 				mod.createActionButtonScrollTrigger(),
-				...mod.initFadeTextAnimation(),
 				...mod.initPageEnterAnimation($hydrated),
+				...mod.initFadeTextAnimation(),
 				...initMagnetAnimation(),
 				...initFillAnimationButton()
 			);
