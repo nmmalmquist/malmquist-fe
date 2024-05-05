@@ -2,6 +2,7 @@
 	import DownChevron from '$lib/components/DownChevron.svelte';
 	import UpChevron from '$lib/components/UpChevron.svelte';
 	import type { TimelineData } from '$lib/types/TimelineData';
+	import { twMerge } from 'tailwind-merge';
 
 	export let timelineData: TimelineData;
 </script>
@@ -19,7 +20,7 @@
 						<p class="font-normal text-base">{event.description}</p>
 					{:else}
 						<button
-							class="bg-white rounded-lg w-full sm:w-[75%] p-6 hover:scale-105 transition-all duration-500 flex gap-2 sm:gap-10 items-center text-start"
+							class="bg-white rounded-lg w-full sm:w-[75%] p-6 flex flex-col gap-5 hover:scale-[1.01] transition-all duration-500"
 							on:click={() => {
 								const prev = event.isActive;
 								timelineData.forEach((year) =>
@@ -30,17 +31,28 @@
 								event.isActive = !prev;
 							}}
 						>
-							{#if event.isActive}
-								<UpChevron className="w-6 h-6 flex-none" />
-							{:else}
-								<DownChevron className="w-6 h-6 flex-none" />
-							{/if}
-							<h5 class="flex-1">
-								{event.title}
-							</h5>
-							<span class="text-base hidden sm:inline">{event.date.toLocaleDateString()}</span
-							></button
-						>
+							<div class="flex gap-2 sm:gap-10 items-center text-start">
+								{#if event.isActive}
+									<UpChevron className="w-6 h-6 flex-none" />
+								{:else}
+									<DownChevron className="w-6 h-6 flex-none" />
+								{/if}
+								<h5 class="flex-1">
+									{event.title}
+								</h5>
+								<span class="text-base hidden sm:inline">{event.date.toLocaleDateString()}</span>
+							</div>
+
+							<div
+								class={twMerge(
+									'w-full flex justify-center gap-5',
+									event.isActive ? 'flex' : 'hidden'
+								)}
+							>
+								<img src={event.src} class="h-24" alt={event.title} />
+								<p class="text-start font-normal">{event.description}</p>
+							</div>
+						</button>
 					{/if}
 				{/each}
 			{/if}

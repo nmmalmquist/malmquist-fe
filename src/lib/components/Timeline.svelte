@@ -18,7 +18,7 @@
 				{#if yearData.events}
 					{#each yearData.events as event, j}
 						<button
-							class="w-8 h-8 bg-secondary shadow-xl rounded-full absolute flex items-center justify-center hover:scale-105 transition-all duration-500"
+							class="w-8 h-8 bg-secondary shadow-xl rounded-full absolute flex items-center justify-center hover:scale-[1.01] transition-all duration-500"
 							style={`top: ${100 - (event.date.getMonth() / 12) * 100}%`}
 							on:click={() => {
 								const prev = event.isActive;
@@ -54,9 +54,9 @@
 		{/if}
 		<button
 			class={twMerge(
-				'px-6 py-4 bg-white w-24 rounded-lg text-lg text-center font-semibold relative flex  justify-end',
+				'px-6 py-4 bg-white w-24 rounded-lg text-lg text-start font-semibold relative flex justify-end',
 				yearData.title === 'Now'
-					? 'border-[2px] border-primary hover:scale-105 transition-all duration-500'
+					? 'border-[2px] border-primary hover:scale-[1.01] transition-all duration-500'
 					: 'pointer-events-none'
 			)}
 			on:click={() => {
@@ -70,7 +70,7 @@
 				<div
 					class={twMerge(
 						'bg-white p-3 mr-32 rounded-lg flex absolute flex-col top-0',
-						timelineData[0].events[0].isActive && 'w-[38rem]'
+						timelineData[0].events[0].isActive && 'w-[28rem]'
 					)}
 				>
 					<div class={twMerge('w-8 h-8 rotate-45 bg-white absolute -right-1')}></div>

@@ -10,7 +10,7 @@
 	class={twMerge(
 		' flex items-center absolute p-3 bg-white rounded-lg',
 		rightPositioned ? 'ml-16' : 'mr-16',
-		event.isActive && event.src && 'w-[38rem] h-48'
+		event.isActive && event.src && `w-[32rem]`
 	)}
 >
 	<div
@@ -21,7 +21,7 @@
 			<h4 class="whitespace-nowrap font-semibold">{event.title}</h4>
 		{:else}
 			{#if event.src}
-				<div class="flex-shrink-0 w-40">
+				<div class="flex-shrink-0 w-16">
 					<img src={event.src} alt="event" class="w-full h-full object-contain" />
 				</div>
 			{/if}

@@ -53,7 +53,7 @@
 					date: new Date('12/1/2024'),
 					isActive: true,
 					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+						'I am continuing work at CGI as a Software Engineer Consultant. Our Client is in the Insurance sector, so I have been enjoying getting to learn about that line of business. In my free time, I am creating a Jenkins / Kubernetes CI/CD process with my home RaspberryPi 4. I have learned so much through this creating this, and it fuels my passion for Dev-ops!'
 				}
 			]
 		},
@@ -68,7 +68,7 @@
 					isActive: false,
 					src: AWSLogo,
 					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+						'For my second professional certification, I obtained the AWS Developer - Associate certification. At the time I was also working with a client using AWS Serverless technology, so the skills transferred easily. I now understand the pros and cons with choose cloud as your main compute infrastructure.'
 				},
 				{
 					date: new Date('06/06/2023'),
@@ -76,7 +76,7 @@
 					isActive: false,
 					src: CGILogo,
 					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+						'Wanting to move to Nashville, TN and work with top-notch professionals in tech, I joined CGI, Inc. CGI Nashville made transitioning from university to enterprise development very easily. To this day, joining CGI has been one of the better decisions in life that I have made. Immediately they put me one a project in the Accounting industry that was planned to Go-Live in 3 months. It forced me to ramp up quickly and to learn and unlearn technologies very fast!'
 				},
 				{
 					date: new Date('05/15/2023'),
@@ -84,7 +84,7 @@
 					src: UALogo,
 					isActive: false,
 					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+						'After quick 4 years at UA, It was my turn to graduate. I walked with my bachelors in Management Information Systems as well as my Masters. Somehow in between football games and innermurals, I was able to put my nose to the grindstone and get the work done. College was a blast being probably then most fun and learning jam packed in 4 years. Ending GPA: 4.0.'
 				}
 			]
 		},
