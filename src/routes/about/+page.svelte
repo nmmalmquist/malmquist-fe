@@ -98,7 +98,7 @@
 					isActive: false,
 					src: SecurityPlusLogo,
 					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+						'Although, Cyber-Security is not my passion (like Application Development is), I figure it is important to understand the basics. So I obtained my Security +.'
 				}
 			]
 		},
@@ -112,7 +112,7 @@
 					isActive: false,
 					src: MBUSILogo,
 					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+						'After my first Co-op rotation at MBUSI, I was staffed on the financial technology team. This consisted of a small group of 4-6 people in the finance department with technical know-how to create Robotic Processing Automations. This is where I learned a bunch about Coding (Virtual Basic) and Agile Project Management.'
 				}
 			]
 		},
@@ -126,7 +126,7 @@
 					isActive: false,
 					src: MBUSILogo,
 					description:
-						'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+						'Joining MBUSI for this Co-op was a game changer for my professional development! It was the first official white-collared job. I started out in the Product Cost Engineering department where we calculated and determined adequately pricing of materials for the GLE and GLE-coup vehicles.'
 				}
 			]
 		}
@@ -150,7 +150,7 @@
 				Eager Learner
 			</h2>
 			<div class="relative w-full flex items-center justify-end">
-				<hr class="w-full absolute" />
+				<hr class="w-full absolute -z-10" />
 				<div
 					class="bg-secondary"
 					data-scroll
