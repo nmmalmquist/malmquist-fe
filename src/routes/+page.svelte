@@ -36,7 +36,6 @@
 
 		import('$lib/utils/locomotive').then((mod) => {
 			const smoothScroller = mod.createScroller();
-
 			setSmoothScroller(smoothScroller);
 			itemsToKill.push(
 				mod.createRollingTextScrollTrigger(),

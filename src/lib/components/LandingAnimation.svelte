@@ -14,16 +14,11 @@
 
 <div
 	class={twMerge(
-		'bg-dark fixed top-0 left-0 w-full h-screen z-30 flex justify-center items-center text-white nick'
+		'bg-dark fixed top-0 left-0 w-full h-screen z-30 flex justify-center items-center text-white landing-intro'
 	)}
 >
-	<span
-		class={twMerge(
-			'text-4xl',
-			displayText === NavItemEnum.HOME && !$hydrated ? 'spin-through-text' : 'display-text-appear'
-		)}
-	>
-		{$hydrated || displayText !== NavItemEnum.HOME ? displayText : ''}
+	<span class={twMerge('text-4xl', !$hydrated ? 'spin-through-text' : 'display-text-appear')}>
+		{$hydrated ? displayText : ''}
 	</span>
 </div>
 

@@ -26,7 +26,8 @@
 	onMount(() => {
 		let itemsToKill: (ScrollTrigger | gsap.core.Timeline | gsap.core.Tween)[] = [];
 
-		import('$lib/utils/locomotive').then((mod) => {
+		import('$lib/utils/locomotive').then(async (mod) => {
+			await new Promise((resolve) => setTimeout(resolve, 200)); //wait for page load to avoid glitchiness
 			setSmoothScroller(mod.createScroller());
 			itemsToKill.push(
 				mod.createRollingTextScrollTrigger(),
