@@ -3,6 +3,7 @@
 	import instagramLogo from '$lib/assets/instagram-logo.webp';
 	import linkedInLogo from '$lib/assets/linkedin-icon.png';
 	import { navItems } from '$lib/constants/NavItems';
+	import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL } from '$lib/constants/links';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
 	import { twMerge } from 'tailwind-merge';
@@ -20,12 +21,10 @@
 			<hr class="my-2" />
 			<ul class="gap-5 flex flex-col my-11">
 				{#each navItems as item}
-					<li class="relative text-4xl">
+					<li class={twMerge('relative text-4xl', item.title === $activeLink && 'selected-drawer')}>
 						<div class="magnetic w-min">
-							<a
-								href={item.url}
-								class={item.title === $activeLink ? 'selected-drawer' : ''}
-								on:click={() => mobileDrawerOpen.update((isOpen) => !isOpen)}>{item.title}</a
+							<a href={item.url} on:click={() => mobileDrawerOpen.update((isOpen) => !isOpen)}
+								>{item.title}</a
 							>
 						</div>
 					</li>
@@ -34,30 +33,21 @@
 		</div>
 		<div class="w-full h-full px-10 sm:px-8 md:px-6 lg:px-4">
 			<ul class="flex justify-between h-full">
-				<a
-					href="https://www.linkedin.com/in/nick-malmquist/"
-					class="flex justify-center items-center h-full"
-				>
+				<a href={LINKEDIN_URL} class="flex justify-center items-center h-full">
 					<img
 						src={linkedInLogo}
 						alt="LinkedIn"
 						class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44"
 					/>
 				</a>
-				<a
-					href="https://www.linkedin.com/in/nick-malmquist/"
-					class="flex justify-center items-center h-full"
-				>
+				<a href={INSTAGRAM_URL} class="flex justify-center items-center h-full">
 					<img
 						src={instagramLogo}
 						alt="Instagram"
 						class="w-12 transition-transform duration-700 hover:rotate-[360deg] max-w-44"
 					/>
 				</a>
-				<a
-					href="https://www.linkedin.com/in/nick-malmquist/"
-					class="flex justify-center items-center h-full"
-				>
+				<a href={GITHUB_URL} class="flex justify-center items-center h-full">
 					<img
 						src={githubLogo}
 						alt="Github"

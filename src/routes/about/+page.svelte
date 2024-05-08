@@ -4,6 +4,7 @@
 	import MBUSILogo from '$lib/assets/MBUSI-Logo.png';
 	import SecurityPlusLogo from '$lib/assets/Security-Plus-Logo.png';
 	import UALogo from '$lib/assets/UA-Logo.png';
+	import InsitelyLogo from '$lib/assets/insitely-logo.jpg';
 	import NickPic from '$lib/assets/nick-about-you.jpg';
 	import Footer from '$lib/components/Footer.svelte';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
@@ -27,7 +28,7 @@
 		let itemsToKill: (ScrollTrigger | gsap.core.Timeline | gsap.core.Tween)[] = [];
 
 		import('$lib/utils/locomotive').then(async (mod) => {
-			await new Promise((resolve) => setTimeout(resolve, 200)); //wait for page load to avoid glitchiness
+			await new Promise((resolve) => setTimeout(resolve, 200)); //wait for page load to avoid glitchiness with smooth scroll
 			setSmoothScroller(mod.createScroller());
 			itemsToKill.push(
 				mod.createRollingTextScrollTrigger(),
@@ -86,6 +87,14 @@
 					isActive: false,
 					description:
 						'After quick 4 years at UA, It was my turn to graduate. I walked with my bachelors in Management Information Systems as well as my Masters. Somehow in between football games and innermurals, I was able to put my nose to the grindstone and get the work done. College was a blast being probably then most fun and learning jam packed in 4 years. Ending GPA: 4.0.'
+				},
+				{
+					date: new Date('01/15/2023'),
+					title: 'First Subcontract work for Insitely (UA Capstone)',
+					src: InsitelyLogo,
+					isActive: false,
+					description:
+						"For UA's MIS Capstone project, I led a team of 5 in contributing real work and features to Insitely. The Founder and Senior Engineer help us step up our coding abilities by reviewing our Pull Requests and giving us constructive critisism. It brought our coding skills up to enterprise level."
 				}
 			]
 		},

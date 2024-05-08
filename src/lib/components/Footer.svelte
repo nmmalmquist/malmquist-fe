@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL } from '$lib/constants/links';
 	import { initFillAnimationButton } from '$lib/utils/fillAnimation';
 	import { onMount } from 'svelte';
 
@@ -59,17 +60,15 @@
 
 			<div class=" flex flex-row gap-6 m-10">
 				<div class="magnetic">
-					<a href="www.github.com" class="hover:text-primary transition-all duration-500">Github</a>
+					<a href={GITHUB_URL} class="hover:text-primary transition-all duration-500">Github</a>
 				</div>
 				<div class="magnetic">
-					<a href="www.instagram.com" class="hover:text-primary transition-all duration-500"
+					<a href={INSTAGRAM_URL} class="hover:text-primary transition-all duration-500"
 						>Instagram</a
 					>
 				</div>
 				<div class="magnetic">
-					<a href="www.linkedin.com" class="hover:text-primary transition-all duration-500"
-						>LinkedIn</a
-					>
+					<a href={LINKEDIN_URL} class="hover:text-primary transition-all duration-500">LinkedIn</a>
 				</div>
 			</div>
 		</div>

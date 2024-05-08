@@ -11,7 +11,7 @@
 		{#if i != 0}
 			<div
 				class={twMerge(
-					'h-96 w-[2px] bg-lightgray relative flex flex-col items-center transition-all duration-500',
+					'h-96 w-[2px] bg-lightgray relative flex flex-col items-center transition-all duration-500 my-8',
 					yearData.events?.some((e) => e.isActive) ? yearData.colorClass : 'bg-lightgray'
 				)}
 			>

@@ -1,5 +1,9 @@
 <script lang="ts">
 	import Nick from '$lib/assets/nick-main.png';
+	import BluePrismSAPPic from '$lib/assets/portfolio/BluePrism-SAP.png';
+	import LSAInsitelyPic from '$lib/assets/portfolio/LSA-Insitely.jpg';
+	import AccountingStockPic from '$lib/assets/portfolio/accounting-stock.jpg';
+	import InsurancetStockPic from '$lib/assets/portfolio/insurance-stock.png';
 	import Footer from '$lib/components/Footer.svelte';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
@@ -57,23 +61,27 @@
 			company: 'CGI',
 			industry: 'Insurance',
 			desription: 'Application Development',
-			tools: ['NextJS', 'API', 'MaterialUI']
+			tools: ['NextJS', 'API', 'MaterialUI'],
+			src: InsurancetStockPic
 		},
 		{
 			company: 'CGI',
 			industry: 'Accounting',
 			desription: 'Application Development',
-			tools: ['React', 'Serverless', 'AWS', 'Python', 'MySQL', 'DynamoDB']
+			tools: ['React', 'Serverless', 'AWS', 'Python', 'MySQL', 'DynamoDB'],
+			src: AccountingStockPic
 		},
 		{
 			company: 'Insitely',
 			desription: 'Application Development',
-			tools: ['React', 'GraphQL', 'Node Express', 'MongoDB']
+			tools: ['React', 'GraphQL', 'Node Express', 'MongoDB'],
+			src: LSAInsitelyPic
 		},
 		{
 			company: 'MBUSI',
 			desription: 'RPA Development',
-			tools: ['BluePrism', 'VBA', 'SAP']
+			tools: ['BluePrism', 'VBA', 'SAP'],
+			src: BluePrismSAPPic
 		}
 	];
 </script>
@@ -143,7 +151,7 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary text-dark w-full flex flex-col pt-24 -mt-1"
+		class="bg-secondary text-dark w-full flex flex-col py-24 -mt-1"
 		data-scroll-section
 		data-scroll-section-id="section1"
 	>
@@ -208,15 +216,17 @@
 							</div>
 						</a>
 						<div
-							class="w-48 h-48 bg-dark fixed hidden group-hover:block cursor-center-target pointer-events-none"
-						></div>
+							class="h-72 p-6 bg-dark fixed opacity-0 group-hover:opacity-100 cursor-center-target pointer-events-none z-50"
+						>
+							<img src={item.src} class="object-contain h-full" alt={item.company} />
+						</div>
 					</li>
 				{/each}
 			</ul>
 		</div>
 	</section>
 	<section
-		class="bg-secondary text-dark flex-col py-24 -mt-1 hidden md:flex w-full items-center"
+		class="bg-secondary text-dark flex-col pb-24 -mt-1 hidden md:flex w-full items-center"
 		data-scroll-section
 		data-scroll-section-id="section2"
 	>

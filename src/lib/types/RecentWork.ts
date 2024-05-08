@@ -3,4 +3,5 @@ export type RecentWork = {
 	industry?: string;
 	desription: string;
 	tools: string[];
+	src?: string;
 };
