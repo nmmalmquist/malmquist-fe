@@ -1,5 +1,5 @@
 import { navInView } from '$lib/stores/navInView';
-import gsap from 'gsap';
+import gsap, { Power4 } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import LocomotiveScroll from 'locomotive-scroll';
 
@@ -23,7 +23,9 @@ export const createScroller = () => {
 
 	window.onresize = locomotiveScroll.update();
 
-	locomotiveScroll.on('scroll', () => ScrollTrigger.update());
+	locomotiveScroll.on('scroll', () => {
+		ScrollTrigger.update();
+	});
 
 	ScrollTrigger.scrollerProxy('[data-scroll-container]', {
 		scrollTop(value) {
@@ -190,4 +192,25 @@ export const initPageEnterAnimation = (isHydrated: boolean) => {
 		clearProps: 'true'
 	});
 	return [tl, tl2];
+};
+
+export const initElementCursorCenter = () => {
+	const elements = document.querySelectorAll('.cursor-center');
+	const tweens: gsap.core.Tween[] = [];
+	elements.forEach((el) => {
+		el.addEventListener('mousemove', (event) => {
+			const mouseEvent = event as MouseEvent;
+			console.log(mouseEvent.clientX, mouseEvent.clientY);
+			const magnetElement = mouseEvent.currentTarget as HTMLElement;
+			const bounding = magnetElement?.getBoundingClientRect();
+			const target = el.querySelector('.cursor-center-target') as HTMLElement;
+			const t = gsap.to(target, 0.1, {
+				x: mouseEvent.clientX - bounding.left - target.getBoundingClientRect().width / 2,
+				y: mouseEvent.clientY - bounding.bottom - target.getBoundingClientRect().height / 2,
+				ease: Power4.easeOut
+			});
+			tweens.push(t);
+		});
+	});
+	return tweens;
 };

@@ -20,12 +20,14 @@
 			<hr class="my-2" />
 			<ul class="gap-5 flex flex-col my-11">
 				{#each navItems as item}
-					<li class="relative text-4xl magnetic">
-						<a
-							href={item.url}
-							class={item.title === $activeLink ? 'selected-drawer' : ''}
-							on:click={() => mobileDrawerOpen.update((isOpen) => !isOpen)}>{item.title}</a
-						>
+					<li class="relative text-4xl">
+						<div class="magnetic w-min">
+							<a
+								href={item.url}
+								class={item.title === $activeLink ? 'selected-drawer' : ''}
+								on:click={() => mobileDrawerOpen.update((isOpen) => !isOpen)}>{item.title}</a
+							>
+						</div>
 					</li>
 				{/each}
 			</ul>

@@ -43,7 +43,8 @@
 				...mod.initPageEnterAnimation($hydrated),
 				...mod.initFadeTextAnimation(),
 				...initMagnetAnimation(),
-				...initFillAnimationButton()
+				...initFillAnimationButton(),
+				...mod.initElementCursorCenter()
 			);
 		});
 		return () => {
@@ -177,8 +178,8 @@
 			<h3>Recent Work</h3>
 			<ul>
 				{#each recentWorkItems as item}
-					<li><hr class="my-6 text-lightgray" /></li>
-					<li class="group">
+					<li class="group cursor-center">
+						<hr class="py-6 text-lightgray" />
 						<a
 							href="#a"
 							class="w-full grid grid-cols-1 md:grid-cols-2 py-10 px-10 transition-all duration-500 md:group-hover:text-gray md:group-hover:px-6"
@@ -206,6 +207,9 @@
 								</span>
 							</div>
 						</a>
+						<div
+							class="w-48 h-48 bg-dark fixed hidden group-hover:block cursor-center-target pointer-events-none"
+						></div>
 					</li>
 				{/each}
 			</ul>
