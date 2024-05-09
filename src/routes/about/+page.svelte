@@ -11,7 +11,7 @@
 	import MobileTimeline from '$lib/components/MobileTimeline.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Timeline from '$lib/components/Timeline.svelte';
-	import CodeIcon from '$lib/components/tech-icons/CodeIcon.svelte';
+	import CodeIcon from '$lib/components/icons/CodeIcon.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { setSmoothScroller } from '$lib/stores/smoothScroller';
 	import { NavItemEnum } from '$lib/types/NavItem';
@@ -151,7 +151,7 @@
 		data-scroll-section-id="section0"
 	>
 		<Navbar />
-		<div class="w-full px-8 md:px-24 lg:px-36 xl:px-48 pt-60 pb-16 md:pb-32 flex flex-col gap-5">
+		<div class="w-full px-8 md:px-24 lg:px-36 xl:px-72 pt-60 pb-16 md:pb-32 flex flex-col gap-5">
 			<h1 class="text-7xl text-dark text-center md:text-start">Software Engineer</h1>
 			<h2
 				class="text-4xl text-gray inline-flex items-center flex-col md:flex-row text-center md:text-start"
@@ -173,7 +173,7 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary w-full px-8 md:px-24 lg:px-36 xl:px-48 md:grid md:grid-cols-3 gap-6 -mt-1 once-in flex flex-col"
+		class="bg-secondary w-full px-8 md:px-24 lg:px-36 xl:px-72 md:grid md:grid-cols-3 gap-6 -mt-1 once-in flex flex-col"
 		data-scroll-section
 		data-scroll-section-id="section1"
 	>
@@ -196,7 +196,7 @@
 		</div>
 	</section>
 	<section
-		class="bg-secondary w-screen px-8 md:px-24 lg:px-36 xl:px-48 py-32 -mt-1 flex flex-col gap-10"
+		class="bg-secondary w-screen px-8 md:px-24 lg:px-36 xl:px-72 py-32 -mt-1 flex flex-col gap-10"
 		data-scroll-section
 		data-scroll-section-id="section2"
 	>

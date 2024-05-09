@@ -3,7 +3,7 @@
 	import { hydrated } from '$lib/utils/hydrated';
 	import { twMerge } from 'tailwind-merge';
 
-	export let displayText: NavItemEnum = NavItemEnum.HOME;
+	export let displayText: string = NavItemEnum.HOME;
 
 	const determineLoadingAnimation = () => {
 		if (!$hydrated && displayText === NavItemEnum.HOME) return 'landing-animation-intro';

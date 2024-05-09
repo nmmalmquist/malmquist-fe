@@ -4,4 +4,5 @@ export type RecentWork = {
 	desription: string;
 	tools: string[];
 	src?: string;
+	href: string;
 };

@@ -7,22 +7,22 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
-	import AWSIcon from '$lib/components/tech-icons/AWSIcon.svelte';
-	import DockerIcon from '$lib/components/tech-icons/DockerIcon.svelte';
-	import DotnetIcon from '$lib/components/tech-icons/DotnetIcon.svelte';
-	import JQueryIcon from '$lib/components/tech-icons/JQueryIcon.svelte';
-	import JavaIcon from '$lib/components/tech-icons/JavaIcon.svelte';
-	import MongoIcon from '$lib/components/tech-icons/MongoIcon.svelte';
-	import MySqlIcon from '$lib/components/tech-icons/MySqlIcon.svelte';
-	import NextJsIcon from '$lib/components/tech-icons/NextJsIcon.svelte';
-	import PostmanIcon from '$lib/components/tech-icons/PostmanIcon.svelte';
-	import PythonIcon from '$lib/components/tech-icons/PythonIcon.svelte';
-	import ReactIcon from '$lib/components/tech-icons/ReactIcon.svelte';
-	import TailwindIcon from '$lib/components/tech-icons/TailwindIcon.svelte';
-	import TypescriptIcon from '$lib/components/tech-icons/TypescriptIcon.svelte';
-	import UbuntuIcon from '$lib/components/tech-icons/UbuntuIcon.svelte';
-	import VueIcon from '$lib/components/tech-icons/VueIcon.svelte';
-	import K8sIcon from '$lib/components/tech-icons/k8sIcon.svelte';
+	import AWSIcon from '$lib/components/icons/AWSIcon.svelte';
+	import DockerIcon from '$lib/components/icons/DockerIcon.svelte';
+	import DotnetIcon from '$lib/components/icons/DotnetIcon.svelte';
+	import JQueryIcon from '$lib/components/icons/JQueryIcon.svelte';
+	import JavaIcon from '$lib/components/icons/JavaIcon.svelte';
+	import MongoIcon from '$lib/components/icons/MongoIcon.svelte';
+	import MySqlIcon from '$lib/components/icons/MySqlIcon.svelte';
+	import NextJsIcon from '$lib/components/icons/NextJsIcon.svelte';
+	import PostmanIcon from '$lib/components/icons/PostmanIcon.svelte';
+	import PythonIcon from '$lib/components/icons/PythonIcon.svelte';
+	import ReactIcon from '$lib/components/icons/ReactIcon.svelte';
+	import TailwindIcon from '$lib/components/icons/TailwindIcon.svelte';
+	import TypescriptIcon from '$lib/components/icons/TypescriptIcon.svelte';
+	import UbuntuIcon from '$lib/components/icons/UbuntuIcon.svelte';
+	import VueIcon from '$lib/components/icons/VueIcon.svelte';
+	import K8sIcon from '$lib/components/icons/k8sIcon.svelte';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { setSmoothScroller } from '$lib/stores/smoothScroller';
 	import { NavItemEnum } from '$lib/types/NavItem';
@@ -62,26 +62,30 @@
 			industry: 'Insurance',
 			desription: 'Application Development',
 			tools: ['NextJS', 'API', 'MaterialUI'],
-			src: InsurancetStockPic
+			src: InsurancetStockPic,
+			href: 'cgi-insurance'
 		},
 		{
 			company: 'CGI',
 			industry: 'Accounting',
 			desription: 'Application Development',
 			tools: ['React', 'Serverless', 'AWS', 'Python', 'MySQL', 'DynamoDB'],
-			src: AccountingStockPic
+			src: AccountingStockPic,
+			href: 'cgi-accounting'
 		},
 		{
 			company: 'Insitely',
 			desription: 'Application Development',
 			tools: ['React', 'GraphQL', 'Node Express', 'MongoDB'],
-			src: LSAInsitelyPic
+			src: LSAInsitelyPic,
+			href: 'insitely'
 		},
 		{
 			company: 'MBUSI',
 			desription: 'RPA Development',
 			tools: ['BluePrism', 'VBA', 'SAP'],
-			src: BluePrismSAPPic
+			src: BluePrismSAPPic,
+			href: 'mbusi'
 		}
 	];
 </script>
@@ -189,7 +193,7 @@
 					<li class="group cursor-center">
 						<hr class="py-6 text-lightgray" />
 						<a
-							href="#a"
+							href={`work/${item.href}`}
 							class="w-full grid grid-cols-1 md:grid-cols-2 py-10 px-10 transition-all duration-500 md:group-hover:text-gray md:group-hover:px-6"
 						>
 							<div class="flex flex-col items-center justify-center">

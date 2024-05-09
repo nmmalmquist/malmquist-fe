@@ -6,6 +6,7 @@
 	import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL } from '$lib/constants/links';
 	import { activeLink } from '$lib/stores/activeLink';
 	import { mobileDrawerOpen } from '$lib/stores/mobileDrawerOpen';
+	import { navInView } from '$lib/stores/navInView';
 	import { twMerge } from 'tailwind-merge';
 </script>
 
@@ -23,8 +24,14 @@
 				{#each navItems as item}
 					<li class={twMerge('relative text-4xl', item.title === $activeLink && 'selected-drawer')}>
 						<div class="magnetic w-min">
-							<a href={item.url} on:click={() => mobileDrawerOpen.update((isOpen) => !isOpen)}
-								>{item.title}</a
+							<a
+								href={item.url}
+								on:click={() => {
+									navInView.update(() => true);
+									setTimeout(() => {
+										mobileDrawerOpen.update((isOpen) => !isOpen);
+									}, 500);
+								}}>{item.title}</a
 							>
 						</div>
 					</li>

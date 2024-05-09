@@ -12,9 +12,5 @@ export const navItems: NavItem[] = [
 	{
 		title: NavItemEnum.ABOUT,
 		url: '/about'
-	},
-	{
-		title: NavItemEnum.CONTACT,
-		url: '/contact'
 	}
 ];
