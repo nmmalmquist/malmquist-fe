@@ -95,7 +95,7 @@
 	</section>
 	{#if data.laptop1Link}
 		<section
-			class="bg-dark w-screen flex flex-col items-stretch overflow-hidden once-in -mt-1 py-24 px-6 sm:px-12 md:px-24"
+			class="bg-dark w-screen flex flex-col overflow-hidden once-in -mt-1 py-24 px-6 sm:px-12 md:px-24 items-center"
 			data-scroll-section
 			data-scroll-section-id="section2"
 		>
@@ -113,7 +113,7 @@
 				</div>
 			{/if}
 
-			<div class="w-full relative flex justify-center">
+			<div class="w-full relative flex justify-center max-w-[80rem]">
 				<video src={vid} muted autoplay loop class="w-[79.5%] mt-[1%] rounded absolute" />
 				<img class="w-full left-0 top-0 object-contain z-10" src={Laptop} alt="laptop" />
 			</div>
