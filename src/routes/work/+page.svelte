@@ -15,6 +15,7 @@
 	import { initMagnetAnimation } from '$lib/utils/magnetic';
 	import type { ScrollTrigger } from 'gsap/all';
 	import { onMount } from 'svelte';
+	import BRFMPic from '$lib/assets/portfolio/BRFM.png';
 
 	activeLink.update(() => NavItemEnum.WORK);
 
@@ -63,6 +64,14 @@
 			year: '2023',
 			backgroundColor: 'bg-dark',
 			href: 'insitely'
+		},
+		{
+			title: 'Beckett Ridge Family Medicine',
+			url: BRFMPic,
+			rAndR: 'Application Development & DevOps',
+			year: '2024',
+			backgroundColor: 'bg-dark',
+			href: 'beckett-ridge-family-medicine'
 		},
 		{
 			title: 'MBUSI',

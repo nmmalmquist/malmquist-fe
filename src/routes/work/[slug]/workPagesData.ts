@@ -1,7 +1,11 @@
 import phoneLandingAdminCode from '$lib/assets/portfolio/phone-admin-code-landing.jpg';
 import phoneMenuAdminCode from '$lib/assets/portfolio/phone-admin-code-menu.jpg';
 import phoneResourcesAdminCode from '$lib/assets/portfolio/phone-admin-code-resources.jpg';
+import BRFM1 from '$lib/assets/portfolio/BRFM_Mobile_1.png';
+import BRFM2 from '$lib/assets/portfolio/BRFM_Mobile_2.png';
+import BRFM3 from '$lib/assets/portfolio/BRFM_Mobile_3.png';
 import InsitelyVideo from '$lib/assets/videos/AdminCode.mov';
+import BRFMVideo from '$lib/assets/videos/BRFM_Laptop_Video.mov';
 import type { WorkPageData } from '$lib/types/WorkPageData';
 
 export const WORK_PAGES_DATA: WorkPageData[] = [
@@ -60,5 +64,26 @@ export const WORK_PAGES_DATA: WorkPageData[] = [
 		laptop1Link: InsitelyVideo,
 		externalLink: 'https://admincode.legislature.state.al.us/',
 		phonePicURLs: [phoneLandingAdminCode, phoneResourcesAdminCode, phoneMenuAdminCode]
+	},
+	{
+		id: 'beckett-ridge-family-medicine',
+		heading: 'Beckett Ridge Family Medicine',
+		subtitle1: 'Private Practice',
+		subtitle2: 'Family Medicine',
+		rolesAndResponsibilities: ['Application Development', 'Development Operations'],
+		locationAndYear: 'Remote - Cincinnati, Ohio @ 2024',
+		length: '4 Months',
+		overview: [
+			`At Beckett Ridge Family Medicine, a multi-million dollar enterprise dedicated to the holistic health of patients\
+			 in the Cincinnati, Ohio area, I developed a robust marketing website using the Go programming language. Leveraging\
+			  Go's powerful concurrency model and simplicity, I ensured the project achieved optimal performance and efficiency,\
+			   free from the unnecessary overhead often associated with bulky JavaScript front-end frameworks. By utilizing\
+			    Go templates for front-end development and Tailwind CSS for styling, I created a seamless, responsive,\
+				 and visually appealing user experience that aligns with the company's commitment to top-tier patient care\
+				  and community wellness. The website is hosted on AWS on an EC2 instance.`
+		],
+		laptop1Link: BRFMVideo,
+		externalLink: 'https://www.beckettridgefamilymedicine.com/',
+		phonePicURLs: [BRFM1, BRFM2, BRFM3]
 	}
 ];

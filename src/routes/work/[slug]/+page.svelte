@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Laptop from '$lib/assets/laptop-transparent.png';
-	import vid from '$lib/assets/videos/AdminCode.mov';
 	import Footer from '$lib/components/Footer.svelte';
 	import LandingAnimation from '$lib/components/LandingAnimation.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
@@ -114,7 +113,13 @@
 			{/if}
 
 			<div class="w-full relative flex justify-center max-w-[80rem]">
-				<video src={vid} muted autoplay loop class="w-[79.5%] mt-[1%] rounded absolute" />
+				<video
+					src={data.laptop1Link}
+					muted
+					autoplay
+					loop
+					class="w-[79.5%] mt-[1%] rounded absolute"
+				/>
 				<img class="w-full left-0 top-0 object-contain z-10" src={Laptop} alt="laptop" />
 			</div>
 		</section>
