@@ -16,8 +16,11 @@ export const WORK_PAGES_DATA: WorkPageData[] = [
 		subtitle2: 'Insurance',
 		rolesAndResponsibilities: ['Application Development & Code Design'],
 		locationAndYear: 'Nashville, TN @ 2024',
-		length: 'Currently working...',
-		overview: ['Overview data']
+		length: 'Present since November 2023',
+		overview: ['This client is a large insurance company located in the south east U.S undergoing a digital transformation. This includes re-vamping their \
+			marketing website, quote workflows, customer portal, policy holder application suite, etc.', 
+			'We utilize Next.JS, Material UI, Github actions for CI/CD, and Azure for Virtual Private Network and Hosting.',
+			'No more information can be shared as they are still a client of CGI.']
 	},
 	{
 		id: 'cgi-accounting',
@@ -29,7 +32,7 @@ export const WORK_PAGES_DATA: WorkPageData[] = [
 		length: '4 months',
 		overview: [
 			'This client with CGI was in the accounting industry. The project was to create a registration system for the company.\
-         The application was entirely serverless usin Amazon Web Services.'
+         The application was entirely serverless using Amazon Web Services. As the are still a client, no more information can be shared.'
 		]
 	},
 	{
